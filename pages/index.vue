@@ -19,20 +19,19 @@ export default defineComponent({
         const password = ref<string>('');
         const handleOk = () => {
             let headers = {
-				//"Authorization": (obj.accessToken) ? `Bearer ${this.accessToken}` : '',
+				"x-access-token": `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQ5ZDgyYjM4MmQ5MjhiYTNiZTY4Nzc0IiwiZW1haWwiOiJsampoZyIsInJvbGUiOiJiYXNpYyIsImlhdCI6MTY4ODA1NDIxMSwiZXhwIjoxNjg4MDYxNDExfQ.rgWRgJYULR7tAex60wF1rYuDi1YPBw2bnQ0IvBexq4Q`,
 			};
 			headers['Accept'] = 'application/json';
 			headers['Content-Type'] = 'application/json';
 			const url = 'http://localhost:8000';
-            const endpoint = 'login';
+            const endpoint = 'birds';
             let obj = {};
             obj['username'] = username.value;
             obj['email'] = email.value;
             obj['password'] = password.value;
 			return fetch(`${url}/${endpoint}`, {
-				method: 'POST',
+				method: 'GET',
 				headers: headers,
-                body: JSON.stringify(obj),
 			}).then(response => response.json());
         };
         return {
