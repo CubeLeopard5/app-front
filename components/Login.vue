@@ -1,0 +1,161 @@
+<template>
+    <div>
+        <a-button type="primary" @click="showModal" style="background: #2951b8; border-color: #2951b8; border-radius: 6px;">
+            Login
+        </a-button>
+        <a-modal v-model:visible="visible" :title="`Login ${errMessage}`" @ok="handleOk" :style="{'--bg': (error == false) ? '#2951b8' : '#FF4D4D'}" :class="(error) ? 'login-failure' : ''">
+            <template #footer>
+                <div style="display: flex; flex-direction: row; justify-content: end; gap: 24px;">
+                    <a-button key="back" @click="handleCancel" style="background: #FF4D4D; border-color: #FF4D4D; border-radius: 6px; color: black">
+                        <span> Back </span>
+                    </a-button>
+                    <a-button key="submit" type="primary" @click="handleOk" :disabled="checkInputs()" style="background: #2951b8; border-color: #2951b8; border-radius: 6px;">
+                        <span> Send </span>
+                    </a-button>
+                </div>
+            </template>
+            <a-form
+                :model="formState"
+                name="normal_login"
+                class="login-form"
+            >
+                <a-form-item
+                    label="email"
+                    name="email"
+                    :rules="[{ required: true, message: 'Enter email' }]"
+                >
+                    <a-input v-model:value="formState.email">
+                        <template #prefix>
+                            <UserOutlined class="site-form-item-icon" />
+                        </template>
+                    </a-input>
+                </a-form-item>
+                <a-form-item
+                    label="password"
+                    name="password"
+                    :rules="[{ required: true, message: 'Enter your password' }]"
+                >
+                    <a-input-password v-model:value="formState.password" v-on:keyup.enter="handleOk">
+                        <template #prefix>
+                            <LockOutlined class="site-form-item-icon" />
+                        </template>
+                    </a-input-password>
+                </a-form-item>
+            </a-form>
+        </a-modal>
+    </div>
+</template>
+
+<script lang="ts">
+import { defineComponent, reactive } from 'vue';
+import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
+import { useMainStore } from '~/store/main';
+
+interface FormState {
+    email: string;
+    password: string;
+}
+export default defineComponent({
+    components: {
+        UserOutlined,
+        LockOutlined,
+    },
+    setup() {
+        const formState = reactive<FormState>({
+            email: '',
+            password: '',
+        });
+        const visible = ref<boolean>(false);
+        let error = ref<boolean>(false);
+        let errMessage = ref<string>('');
+
+        const showModal = () => {
+            visible.value = true;
+        };
+
+        const handleOk = async () => {
+            console.log('ok');
+            const store = useMainStore();
+            const response = await store.sendSafeRequestToServer({
+                method: "POST",
+                endpoint: "login/",
+                accessToken: false,
+                body: JSON.stringify({
+                    email: formState.email,
+                    password: formState.password
+                })
+            });
+            if (response._id) {
+                store.setAccessToken(response.token);
+                visible.value = false;
+                const router = useRouter();
+                router.push({ path: "/home" });
+            } else {
+                error.value = true;
+                console.log(response);
+                errMessage.value = response.response;
+            }
+        };
+
+        const checkInputs = () => {
+            if (!formState.email || !formState.password) {
+                return true;
+            }
+            return false;
+        };
+
+        const handleCancel = () => {
+            visible.value = false;
+            error.value = false;
+            errMessage.value = '';
+        };
+        return {
+            visible,
+            error,
+            errMessage,
+            showModal,
+            handleOk,
+            handleCancel,
+            formState,
+            checkInputs,
+        };
+    },
+});
+</script>
+
+<style>
+.ant-modal-header {
+    background: var(--bg);
+}
+
+.ant-modal-title {
+    color: white;
+}
+
+.login-failure {
+	animation-name: shakeError;
+	animation-fill-mode: forwards;
+	animation-duration: 600ms;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes shakeError {
+	0% {
+		transform: translateX(0); }
+	15% {
+		transform: translateX(0.375rem); }
+	30% {
+		transform: translateX(-0.375rem); }
+	45% {
+		transform: translateX(0.375rem); }
+	60% {
+		transform: translateX(-0.375rem); }
+	75% {
+		transform: translateX(0.375rem); }
+	90% {
+		transform: translateX(-0.375rem); }
+	100% {
+		transform: translateX(0);
+	}
+}
+</style>
