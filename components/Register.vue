@@ -1,9 +1,9 @@
 <template>
     <div>
         <a-button type="primary" @click="showModal" style="background: #2951b8; border-color: #2951b8; border-radius: 6px;">
-            Login
+            Register
         </a-button>
-        <a-modal v-model:visible="visible" :title="`Login ${errMessage}`" @ok="handleOk" :style="{'--bg': (error == false) ? '#2951b8' : '#FF4D4D'}" :class="(error) ? 'login-failure' : ''">
+        <a-modal v-model:visible="visible" :title="`Register`" @ok="handleOk">
             <template #footer>
                 <div style="display: flex; flex-direction: row; justify-content: end; gap: 24px;">
                     <a-button key="back" @click="handleCancel" style="background: #FF4D4D; border-color: #FF4D4D; border-radius: 6px; color: black">
@@ -16,9 +16,20 @@
             </template>
             <a-form
                 :model="formState"
-                name="normal_login"
-                class="login-form"
+                name="normal_register"
+                class="register-form"
             >
+                <a-form-item
+                    label="username"
+                    name="username"
+                    :rules="[{ required: true, message: 'Enter username' }]"
+                >
+                    <a-input v-model:value="formState.username">
+                        <template #prefix>
+                            <UserOutlined class="site-form-item-icon" />
+                        </template>
+                    </a-input>
+                </a-form-item>
                 <a-form-item
                     label="email"
                     name="email"
@@ -57,26 +68,27 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
-import { MailOutlined, LockOutlined } from '@ant-design/icons-vue';
+import { UserOutlined, MailOutlined, LockOutlined } from '@ant-design/icons-vue';
 import { useMainStore } from '~/store/main';
 
 interface FormState {
+    username: string,
     email: string;
     password: string;
 }
 export default defineComponent({
     components: {
+        UserOutlined,
         MailOutlined,
         LockOutlined,
     },
     setup() {
         const formState = reactive<FormState>({
+            username: '',
             email: '',
             password: '',
         });
         const visible = ref<boolean>(false);
-        let error = ref<boolean>(false);
-        let errMessage = ref<string>('');
 
         const showModal = () => {
             visible.value = true;
@@ -86,9 +98,10 @@ export default defineComponent({
             const store = useMainStore();
             const response = await store.sendSafeRequestToServer({
                 method: "POST",
-                endpoint: "login/",
+                endpoint: "register/",
                 accessToken: false,
                 body: JSON.stringify({
+                    username: formState.username,
                     email: formState.email,
                     password: formState.password
                 })
@@ -99,14 +112,12 @@ export default defineComponent({
                 const router = useRouter();
                 router.push({ path: "/home" });
             } else {
-                error.value = true;
                 console.log(response);
-                errMessage.value = response.response;
             }
         };
 
         const checkInputs = () => {
-            if (!formState.email || !formState.password) {
+            if (!formState.username || !formState.email || !formState.password) {
                 return true;
             }
             return false;
@@ -114,13 +125,9 @@ export default defineComponent({
 
         const handleCancel = () => {
             visible.value = false;
-            error.value = false;
-            errMessage.value = '';
         };
         return {
             visible,
-            error,
-            errMessage,
             showModal,
             handleOk,
             handleCancel,
@@ -137,37 +144,10 @@ export default defineComponent({
 }
 
 .ant-modal-header {
-    background: var(--bg);
+    background: #2951b8;
 }
 
 .ant-modal-title {
     color: white;
-}
-
-.login-failure {
-	animation-name: shakeError;
-	animation-fill-mode: forwards;
-	animation-duration: 600ms;
-	animation-timing-function: ease-in-out;
-}
-
-@keyframes shakeError {
-	0% {
-		transform: translateX(0); }
-	15% {
-		transform: translateX(0.375rem); }
-	30% {
-		transform: translateX(-0.375rem); }
-	45% {
-		transform: translateX(0.375rem); }
-	60% {
-		transform: translateX(-0.375rem); }
-	75% {
-		transform: translateX(0.375rem); }
-	90% {
-		transform: translateX(-0.375rem); }
-	100% {
-		transform: translateX(0);
-	}
 }
 </style>
