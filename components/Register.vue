@@ -1,15 +1,15 @@
 <template>
     <div>
-        <a-button type="primary" @click="showModal" style="background: #2951b8; border-color: #2951b8; border-radius: 6px;">
+        <a-button type="primary" @click="showModal" style="background: #0f6a08; border-color: #0f6a08; border-radius: 6px;">
             Register
         </a-button>
-        <a-modal v-model:visible="visible" :title="`Register`" @ok="handleOk">
+        <a-modal v-model:visible="visible" :title="`Register ${errMessage}`" @ok="handleOk" :style="{'--bg': (error == false) ? '#0f6a08' : '#FF4D4D'}" :class="(error) ? 'login-failure' : ''">
             <template #footer>
                 <div style="display: flex; flex-direction: row; justify-content: end; gap: 24px;">
                     <a-button key="back" @click="handleCancel" style="background: #FF4D4D; border-color: #FF4D4D; border-radius: 6px; color: black">
                         <span> Back </span>
                     </a-button>
-                    <a-button key="submit" type="primary" @click="handleOk" :disabled="checkInputs()" style="background: #2951b8; border-color: #2951b8; border-radius: 6px;">
+                    <a-button key="submit" type="primary" @click="handleOk" :disabled="checkInputs()" style="background: #0f6a08; border-color: #0f6a08; border-radius: 6px;">
                         <span> Send </span>
                     </a-button>
                 </div>
@@ -89,6 +89,8 @@ export default defineComponent({
             password: '',
         });
         const visible = ref<boolean>(false);
+        let error = ref<boolean>(false);
+        let errMessage = ref<string>('');
 
         const showModal = () => {
             visible.value = true;
@@ -112,7 +114,9 @@ export default defineComponent({
                 const router = useRouter();
                 router.push({ path: "/home" });
             } else {
+                error.value = true;
                 console.log(response);
+                errMessage.value = response.response;
             }
         };
 
@@ -133,6 +137,8 @@ export default defineComponent({
             handleCancel,
             formState,
             checkInputs,
+            error,
+            errMessage,
         };
     },
 });
@@ -144,7 +150,7 @@ export default defineComponent({
 }
 
 .ant-modal-header {
-    background: #2951b8;
+    background: var(--bg);
 }
 
 .ant-modal-title {

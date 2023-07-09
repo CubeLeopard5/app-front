@@ -1,15 +1,15 @@
 <template>
     <div>
-        <a-button type="primary" @click="showModal" style="background: #2951b8; border-color: #2951b8; border-radius: 6px;">
+        <a-button type="primary" @click="showModal" style="background: #0f6a08; border-color: #0f6a08; border-radius: 6px;">
             Login
         </a-button>
-        <a-modal v-model:visible="visible" :title="`Login ${errMessage}`" @ok="handleOk" :style="{'--bg': (error == false) ? '#2951b8' : '#FF4D4D'}" :class="(error) ? 'login-failure' : ''">
+        <a-modal v-model:visible="visible" :title="`Login ${errMessage}`" @ok="handleOk" :style="{'--bg': (error == false) ? '#0f6a08' : '#FF4D4D'}" :class="(error) ? 'login-failure' : ''">
             <template #footer>
                 <div style="display: flex; flex-direction: row; justify-content: end; gap: 24px;">
                     <a-button key="back" @click="handleCancel" style="background: #FF4D4D; border-color: #FF4D4D; border-radius: 6px; color: black">
                         <span> Back </span>
                     </a-button>
-                    <a-button key="submit" type="primary" @click="handleOk" :disabled="checkInputs()" style="background: #2951b8; border-color: #2951b8; border-radius: 6px;">
+                    <a-button key="submit" type="primary" @click="handleOk" :disabled="checkInputs()" style="background: #0f6a08; border-color: #0f6a08; border-radius: 6px;">
                         <span> Send </span>
                     </a-button>
                 </div>

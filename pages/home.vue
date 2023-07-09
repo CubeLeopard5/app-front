@@ -1,6 +1,6 @@
 <template>
-    <div>
-        KAKA + {{ string }}
+    <div style="color: white;">
+        Hello world: {{ data.email }}
     </div>
 </template>
 
@@ -9,7 +9,7 @@ import { onMounted } from 'vue';
 import { useMainStore } from '~/store/main';
 
 const store = useMainStore();
-let string = ref('');
+let data = ref('');
 
 onMounted(async () => {
     const response = await store.sendSafeRequestToServer({
@@ -17,6 +17,6 @@ onMounted(async () => {
         endpoint: "welcome/",
         accessToken: true,
     });
-    string.value = response.response;
+    data.value = response.results;
 })
 </script>
