@@ -1,0 +1,9 @@
+{
+    "header": {
+        "login": "Login",
+        "register": "Register",
+        "back": "Back",
+        "send": "Send"
+    },
+    "language": "Language"
+ }

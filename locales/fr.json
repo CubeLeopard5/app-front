@@ -1,0 +1,10 @@
+{
+    "header": {
+        "login": "Connexion",
+        "register": "Inscription",
+        "back": "Retour",
+        "send": "Envoyer"
+    },
+    "language": "Langue"
+ }
+ 

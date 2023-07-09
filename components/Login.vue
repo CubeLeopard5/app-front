@@ -1,16 +1,16 @@
 <template>
     <div>
         <a-button type="primary" @click="showModal" style="background: #0f6a08; border-color: #0f6a08; border-radius: 6px;">
-            Login
+            {{ $t('header.login') }}
         </a-button>
-        <a-modal v-model:visible="visible" :title="`Login ${errMessage}`" @ok="handleOk" :style="{'--bg': (error == false) ? '#0f6a08' : '#FF4D4D'}" :class="(error) ? 'login-failure' : ''">
+        <a-modal v-model:visible="visible" :title="`${$t('header.login')} ${errMessage}`" @ok="handleOk" :style="{'--bg': (error == false) ? '#0f6a08' : '#FF4D4D'}" :class="(error) ? 'login-failure' : ''">
             <template #footer>
                 <div style="display: flex; flex-direction: row; justify-content: end; gap: 24px;">
                     <a-button key="back" @click="handleCancel" style="background: #FF4D4D; border-color: #FF4D4D; border-radius: 6px; color: black">
-                        <span> Back </span>
+                        <span> {{ $t('header.back') }} </span>
                     </a-button>
                     <a-button key="submit" type="primary" @click="handleOk" :disabled="checkInputs()" style="background: #0f6a08; border-color: #0f6a08; border-radius: 6px;">
-                        <span> Send </span>
+                        <span> {{ $t('header.send') }} </span>
                     </a-button>
                 </div>
             </template>
