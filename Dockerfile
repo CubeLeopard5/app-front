@@ -1,9 +1,11 @@
 FROM docker.io/node:18-alpine AS builder
-COPY . /nuxt
-WORKDIR /nuxt
+COPY . /app-front
+WORKDIR /app-front
 RUN yarn install
 
 EXPOSE 3000
-EXPOSE 80
+EXPOSE 24678
 
-CMD [ "yarn", "dev" ]
+RUN yarn build
+
+CMD [ "node", ".output/server/index.mjs" ]

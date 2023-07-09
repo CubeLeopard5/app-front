@@ -5,3 +5,6 @@ README.md
 *.env
 env
 node_modules
+.nuxt
+.output
+yarn lock
