@@ -1,6 +1,7 @@
 <template>
-    <div style="display: flex; flex-direction: row; justify-content: space-between;">
-        <div :style="{ 'color': store.themes[store.themes.selected].text }">
+    <div style="display: flex; flex-direction: row; justify-content: space-between;" :style="{ 'color': store.themes[store.themes.selected].text }">
+        <div>
+            <img src="@/assets/moi.png" style="height: 55px; width: 55px; border-radius: 50%;"/>
             <span> Adrien Michaud </span>
         </div>
         <div style="display: flex; flex-direction: row; gap: 12px;">
@@ -23,6 +24,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { useMainStore } from '~/store/main';
+
 export default defineComponent({
     setup() {
         const store = useMainStore();
