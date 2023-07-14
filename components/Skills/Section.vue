@@ -5,7 +5,7 @@
         </div>
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 100px); margin-top: 24px;">
             <div v-for="el, i in data" :key="i">
-                <Skill :data="el"/>
+                <SkillsItem :data="el"/>
             </div>
         </div>
     </div>

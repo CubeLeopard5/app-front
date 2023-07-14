@@ -4,7 +4,7 @@
             <span style="font-weight: bold; font-size: 18px; color: #0f6a08;"> Experiences </span>
         </div>
         <div v-for="el, i in data" :key="i">
-            <Experience :data="el"/>
+            <ExperiencesItem :data="el"/>
             <a-divider v-if="i < data.length - 1"/>
         </div>
     </div>
