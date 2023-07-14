@@ -2,6 +2,7 @@
     <div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; padding-bottom: 24px; gap: 24px;" class="list-cards">
         <AboutMe :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
 		<SkillsSection :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
+		<ProjectsSection :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
         <ExperiencesSection :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
 		<EducationsSection :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
     </div>
