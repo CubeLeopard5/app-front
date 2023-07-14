@@ -1,11 +1,22 @@
 <template>
-    <div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; padding-bottom: 24px; gap: 24px;" class="list-cards">
-        <AboutMe :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
-		<SkillsSection :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
-		<ProjectsSection :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
-        <ExperiencesSection :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
-		<EducationsSection :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
-    </div>
+	<div>
+		<a-row>
+			<a-col :span="3" style="display: flex; flex-direction: column; align-items: center;">
+				<Summary/>
+			</a-col>
+			<a-col :span="18">
+				<div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; padding-bottom: 24px; gap: 24px;" class="list-cards">
+					<AboutMe id="aboutme" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
+					<SkillsSection id="skills" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
+					<ProjectsSection id="projects" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
+					<ExperiencesSection id="experiences" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
+					<EducationsSection id="educations" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
+				</div>
+			</a-col>
+			<a-col :span="3">
+			</a-col>
+		</a-row>
+	</div>
 </template>
 
 <script setup>
@@ -16,7 +27,7 @@ const store = useMainStore();
 
 <style>
 .card {
-	width: 60%;
+	width: 75%;
     padding: 16px 16px 16px 16px;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -43,16 +54,14 @@ const store = useMainStore();
 }
 
 .list-cards {
-	max-height: 100vh;
-	overflow: scroll;
 	margin-bottom: 24px;
-}
-
-.list-cards::-webkit-scrollbar {
-	display: none;
 }
 
 body::-webkit-scrollbar {
 	display: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 </style>
