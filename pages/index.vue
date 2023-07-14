@@ -1,8 +1,9 @@
 <template>
-    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 24px; gap: 24px;" class="list-cards">
+    <div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; gap: 24px;" class="list-cards">
         <AboutMe :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
+		<SkillSection :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
         <ExperienceSection :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
-		<Educations :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
+		<EducationSection :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
     </div>
 </template>
 
