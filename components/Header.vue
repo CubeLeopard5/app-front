@@ -15,8 +15,6 @@
             <div style="display: flex; flex-direction: row; align-items: center;">
                 <a-switch v-model:checked="checked" checked-children="light" un-checked-children="dark" @change="changeTheme" style="background: #0f6a08;"/>
             </div>
-            <Login/>
-            <Register/>
         </div>
     </div>
 </template>
