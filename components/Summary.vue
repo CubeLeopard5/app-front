@@ -1,7 +1,7 @@
 <template>
     <a-affix :offset-top="top">
-        <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px;" :style="{ color: store.themes[store.themes.selected].text }">
-            <div class="menu-item" @click="goToSection('aboutme')">
+        <div class="menu" :style="{ border: `solid 1px ${store.themes[store.themes.selected].tertiary}`, background: store.themes[store.themes.selected].primary, color: store.themes[store.themes.selected].text }">
+            <div class="menu-item" @click="goToSection('about')">
                 <UserOutlined />
                 <span> {{ $t('summary.about') }} </span>
             </div>
@@ -59,6 +59,16 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    margin-top: 12px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .menu-item {
     cursor: pointer;
     display: flex;

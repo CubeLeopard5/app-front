@@ -13,11 +13,11 @@
             <a-col :span="18">
                 <div style="display: flex; flex-direction: row; justify-content: space-between;">
                     <span style="font-weight: bold; font-size: 18px;"> Erudia </span>
-                    <a href="https://eip.epitech.eu/2024/erudia/" target="_blank"> Lien vers le site</a>
+                    <a href="https://erudia.fr" target="_blank"> Lien vers le site</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 8px; padding: 0px 24px 0px 0px; margin-top: 12px;">
                     <span> Projet de fin d'étude à Epitech. Erudia est une plateforme permettant aux chercheurs de publier et reviewer des articles scientifiques. Elle permet également de rechercher des articles et de s'assurer de leur fiabilité. </span>
-                    <NuxtLink to="/erudia">See Images</NuxtLink>
+                    <NuxtLink to="/erudia"> Plus d'informations </NuxtLink>
                 </div>
             </a-col>
         </a-row>
@@ -35,7 +35,7 @@
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 8px; padding: 0px 24px 0px 0px; margin-top: 12px;">
                     <span> This project his to make a server running on your local machine and a client that can connect to this server. The client can then login and send messages to other clients. It demonstrates the use of select, send, read, bind and listen functions. </span>
-                    <NuxtLink to="/my_teams">See Images</NuxtLink>
+                    <NuxtLink to="/my_teams"> Plus d'informations </NuxtLink>
                 </div>
             </a-col>
         </a-row>

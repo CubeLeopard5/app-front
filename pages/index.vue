@@ -6,7 +6,7 @@
 			</a-col>
 			<a-col :span="18">
 				<div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; padding-bottom: 24px; gap: 24px;" class="list-cards">
-					<AboutMe id="aboutme" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
+					<AboutMe id="about" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
 					<SkillsSection id="skills" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
 					<ProjectsSection id="projects" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
 					<ExperiencesSection id="experiences" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
