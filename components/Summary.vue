@@ -1,29 +1,29 @@
 <template>
     <a-affix :offset-top="top">
-        <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px;">
+        <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px;" :style="{ color: store.themes[store.themes.selected].text }">
             <div class="menu-item" @click="goToSection('aboutme')">
                 <UserOutlined />
-                <span> About me </span>
+                <span> {{ $t('summary.about') }} </span>
             </div>
             <a-divider style="margin: unset;"/>
             <div class="menu-item" @click="goToSection('skills')">
                 <BulbOutlined />
-                <span> Skills </span>
+                <span> {{ $t('summary.skills') }} </span>
             </div>
             <a-divider style="margin: unset;"/>
             <div class="menu-item" @click="goToSection('projects')">
                 <ProjectOutlined />
-                <span> Projects </span>
+                <span> {{ $t('summary.projects') }} </span>
             </div>
             <a-divider style="margin: unset;"/>
             <div class="menu-item" @click="goToSection('experiences')">
                 <LaptopOutlined />
-                <span> Experiences </span>
+                <span> {{ $t('summary.experiences') }} </span>
             </div>
             <a-divider style="margin: unset;"/>
             <div class="menu-item" @click="goToSection('educations')">
                 <BookOutlined />
-                <span> Educations </span>
+                <span> {{ $t('summary.educations') }} </span>
             </div>
         </div>
     </a-affix>
@@ -32,6 +32,7 @@
 <script>
 import { defineComponent, ref } from 'vue';
 import { UserOutlined, BulbOutlined, ProjectOutlined, LaptopOutlined, BookOutlined } from '@ant-design/icons-vue';
+import { useMainStore } from '~/store/main';
 
 export default defineComponent({
     components: {
@@ -44,12 +45,14 @@ export default defineComponent({
     setup() {
         const top = ref(10);
         const router = useRouter();
+        const store = useMainStore();
         const goToSection = (place) => {
             router.push({path: '/', hash: `#${place}`})
         }
         return {
             top,
             goToSection,
+            store,
         }
     },
 });

@@ -5,5 +5,12 @@
         "back": "Back",
         "send": "Send"
     },
+    "summary": {
+        "about": "About me",
+        "skills": "Skills",
+        "projects": "Projects",
+        "experiences": "Experiences",
+        "educations": "Educations"
+    },
     "language": "Language"
  }
