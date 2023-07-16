@@ -4,10 +4,10 @@
             <span style="font-weight: bold; font-size: 18px; color: #0f6a08;"> About me </span>
         </div>
         <div>
-            <span> Ayant suivi la formation de l'école Epitech, je suis animé des technologies web et possède de larges compétences en C, CPP, Javascript et VueJS. </span>
+            <span> Ayant suivi la formation de l'école Epitech (actuellement en 5ième année), je suis animé des technologies web et possède de larges compétences en C, CPP, Javascript et VueJS. </span>
         </div>
         <div>
-            <span> Ce que je peux faire: </span>
+            <span> Mon expérience actuel me permet de: </span>
         </div>
         <div style="padding: 12px 0px 12px 24px;">
             <div v-for="el, i in done" :key="i">
@@ -15,10 +15,10 @@
             </div>
         </div>
         <div>
-            <span> Mes nombreuses expériences professionnelles me permettent d'efficacement répondre à vos besoins et d'exceller dans mon domaine. </span>
+            <span> Mes diverses expériences professionnelles me permettent de répondre efficacement à vos besoins et d'exceller dans mon domaine. </span>
         </div>
         <div>
-            <span> Je suis toujours à la cherche de nouvelles collaborations afin d’apporter mon expertise à vos projets. </span>
+            <span> Je suis toujours à la recherche de nouvelles collaborations afin d’apporter mon expertise à vos projets. </span>
         </div>
     </div>
 </template>

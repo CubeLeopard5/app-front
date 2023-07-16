@@ -16,7 +16,7 @@
                     <a href="https://erudia.fr" target="_blank"> Lien vers le site</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 8px; padding: 0px 24px 0px 0px; margin-top: 12px;">
-                    <span> Projet de fin d'étude à Epitech. Erudia est une plateforme permettant aux chercheurs de publier et reviewer des articles scientifiques. Elle permet également de rechercher des articles et de s'assurer de leur fiabilité. </span>
+                    <span> Projet de fin d'études à Epitech, mené par moi-même et 9 autres étudiants. Erudia est une plateforme permettant aux chercheurs de publier et reviewer des articles scientifiques. Elle permet également de rechercher des articles et de s'assurer de leur fiabilité. </span>
                     <NuxtLink to="/erudia"> Plus d'informations </NuxtLink>
                 </div>
             </a-col>

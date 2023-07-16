@@ -3,9 +3,13 @@
         <a-row>
             <a-col :span="12" class="col-text">
                 <span class="title" style="display: flex; flex-direction: row; justify-content: center; margin-bottom: 12px;"> my_teams </span>
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <a-button type="text" style="background: white; border-radius: 6px;"> Retour </a-button>
+                    <a href="https://github.com/CubeLeopard5/my_teams" target="_blank"> Lien Github</a>
+                </div>
                 <div class="bloc">
                     <span class="title"> Description </span>
-                    <span style="padding-left: 12px;"> This project his to make a server running on your local machine and a client that can connect to this server. The client can then login and send messages to other clients. It demonstrates the use of <code> select </code>, <code> send </code>, <code> read </code>, <code> bind </code> and <code> listen </code> functions. </span>
+                    <span style="padding-left: 12px;"> This project is to make a server running on your local machine and a client that can connect to this server. The client can then login and send messages to other clients. It demonstrates the use of <code> select </code>, <code> send </code>, <code> read </code>, <code> bind </code> and <code> listen </code> functions. </span>
                 </div>
                 <div class="bloc">
                     <span class="title"> Requirements </span>
@@ -58,7 +62,7 @@
                         <span> To run the client: </span>
                         <code class="code-text"> /login &lt;username&gt; #this will return you an uuid </code>
                         <span> Send message to someone: </span>
-                        <code> /send &lt;uuid&gt; &lt;message&gt; </code>
+                        <code class="code-text"> /send &lt;uuid&gt; &lt;message&gt; </code>
                         <span> See all users information: </span>
                         <code class="code-text"> /users </code>
                         <span> See one user information: </span>
@@ -73,7 +77,7 @@
                 </div>
             </a-col>
             <a-col :span="12" style="display: flex; flex-direction: column; align-items: center; margin-top: 24px;">
-                <span class="title" style="margin-bottom: 12px;"> Images </span>
+                <span class="title" style="margin-bottom: 12px;"> Illustrations </span>
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 24px;">
                     <img src="@/assets/my_teams_1.png" alt="">
                     <img src="@/assets/my_teams_2.png" alt="">

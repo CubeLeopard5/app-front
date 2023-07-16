@@ -1,7 +1,7 @@
 <template>
     <div :style="{ 'color': store.themes[store.themes.selected].text }">
         <div style="margin-bottom: 12px;">
-            <span style="font-weight: bold; font-size: 18px; color: #0f6a08;"> Education </span>
+            <span style="font-weight: bold; font-size: 18px; color: #0f6a08;"> Formation </span>
         </div>
         <div v-for="el, i in data" :key="i">
             <EducationsItem :data="el"/>
@@ -24,7 +24,7 @@ export default defineComponent({
                 compagny: "EPITECH",
                 place: "Paris, Ile-de-France, France",
                 time: "Septembre 2019 - Août 2024",
-                description: "Un stage chez ESPRI Digital où j'ai réalisé un système de sauvegarde de bases de données avec des conteneurs managés par Kubernetes.",
+                description: "Le Programme Grande Ecole est le cursus historique d’Epitech Technology. Il se déroule en 5 ans pour former des experts en informatique. Il propose un contenu technique dense et évolutif, comprenant une diversité de projets de programmation et couvrant de nombreux langages qui permettront à l’étudiant d’aborder toutes les nouvelles technologies.",
             },
             {
                 img: "https://media.licdn.com/dms/image/D560BAQGSIrnzer9Z8w/company-logo_100_100/0/1686323844105?e=1697673600&v=beta&t=HCvUXKlAVIwXqwOQhohdKp2yGT56aFHEUVbfcojjsJ0",
@@ -32,7 +32,7 @@ export default defineComponent({
                 compagny: "Dublin City University",
                 place: "Dublin, Irlande",
                 time: "Septembre 2022 - Mai 2023",
-                description: "Un travail en part-time où j'ai réalisé la refonte du site de la Mutuelle Générale de Prévoyance.",
+                description: "J'ai éffectué ma quatrième année d'étude à Dublin City University en Irlande. Celle-ci m'a permis d'étendre mes compétences en web design, gestion de projets et apprendre de nouvelles technologies.",
             },
             {
                 img: "https://eduscol.education.fr/sti/system/files/images/concours-examens/14557/14557-13857-logo-si-2019.png",
@@ -40,7 +40,7 @@ export default defineComponent({
                 compagny: "Lycée Albert Camus",
                 place: "Lyon, Auvergne-Rhône-Alpes, France",
                 time: "2019",
-                description: "Un travail en part-time où j'ai réalisé la refonte du site de la Mutuelle Générale de Prévoyance.",
+                description: "Obtention de mon bac Sciences de l'ingénieur avec optien Informatique et Sciences du Numériques (ISN).",
             },
         ])
         return {
