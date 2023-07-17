@@ -1,7 +1,7 @@
 <template>
     <div :style="{ 'color': store.themes[store.themes.selected].text }">
         <div style="margin-bottom: 12px;">
-            <span style="font-weight: bold; font-size: 18px; color: #0f6a08;"> Formation </span>
+            <span style="font-weight: bold; font-size: 18px; color: #0f6a08; font-size: 24px;"> Formation </span>
         </div>
         <div v-for="el, i in data" :key="i">
             <EducationsItem :data="el"/>
@@ -27,7 +27,7 @@ export default defineComponent({
                 description: "Le Programme Grande Ecole est le cursus historique d’Epitech Technology. Il se déroule en 5 ans pour former des experts en informatique. Il propose un contenu technique dense et évolutif, comprenant une diversité de projets de programmation et couvrant de nombreux langages qui permettront à l’étudiant d’aborder toutes les nouvelles technologies.",
             },
             {
-                img: "https://media.licdn.com/dms/image/D560BAQGSIrnzer9Z8w/company-logo_100_100/0/1686323844105?e=1697673600&v=beta&t=HCvUXKlAVIwXqwOQhohdKp2yGT56aFHEUVbfcojjsJ0",
+                img: "https://upload.wikimedia.org/wikipedia/en/b/b2/Dublin_City_University_%28logo%29.png",
                 title: "Faculty of engineering and computing",
                 compagny: "Dublin City University",
                 place: "Dublin, Irlande",

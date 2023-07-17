@@ -12,5 +12,71 @@
         "experiences": "Experiences",
         "educations": "Educations"
     },
+    "about": {
+        "title": "About me",
+        "one": "Having trained at Epitech (currently in my 5th year), I'm passionate about web technologies and have extensive skills in C, CPP, Javascript and VueJS.",
+        "two": "My current experience enables me to:",
+        "three": [
+            "- Build a web application for your needs",
+            "- Translate website design into code",
+            "- Work with teams of frontend and backend developers",
+            "- Respond to backend service needs",
+            "- Create scripts to automate your tasks"
+        ],
+        "four": "My diverse professional experience enables me to respond effectively to your needs and excel in my field.",
+        "five": "I'm always on the lookout for new collaborations to bring my expertise to your projects."
+    },
+    "skills": {
+        "title": "Skills"
+    },
+    "projects": {
+        "title": "Projects",
+        "erudia": {
+            "title": "Erudia",
+            "description": "Final year project at Epitech, carried out by myself and 9 other students. Erudia is a platform enabling researchers to publish and review scientific articles. It can also be used to search for articles and check their reliability."
+        },
+        "teams": {
+            "title": "my_teams",
+            "description": "This project his to make a server running on your local machine and a client that can connect to this server. The client can then login and send messages to other clients. It demonstrates the use of select, send, read, bind and listen functions."
+        },
+        "link": "Link to website",
+        "github": "Github link",
+        "more": "More information"
+    },
+    "experiences": {
+        "title": "Experiences",
+        "items": [
+            {
+                "title": "Back-end developer",
+                "compagny": "ESPRI Digital",
+                "place": "Argentan, Normandie, France",
+                "time": "April 2022 - July 2022",
+                "description": [
+                    "4-month internship with ESPRI Digital.",
+                    "Implementation of a database backup system with Kubernetes managed containers."
+                ]
+            },
+            {
+                "title": "Front-end developer",
+                "compagny": "Axxone System",
+                "place": "Lyon, Auvergne-Rhône-Alpes, France",
+                "time": "September 2021 - March 2022",
+                "description": [
+                    "Part-time 2 days/week at Axxones System for 6 months.",
+                    "Redesign of the Mutuelle Générale de Prévoyance website."
+                ]
+            },
+            {
+                "title": "FullStack developer",
+                "compagny": "Axxone System",
+                "place": "Lyon, Auvergne-Rhône-Alpes, France",
+                "time": "July 2020 - December 2020",
+                "description": [
+                    "5-month internship at Axxone System.",
+                    "Creation of elements in js view, with full-text search and indexing."
+                ]
+            }
+        ]
+    },
     "language": "Language"
  }

@@ -13,7 +13,8 @@
 					<EducationsSection id="educations" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
 				</div>
 			</a-col>
-			<a-col :span="3">
+			<a-col :span="3" style="display: flex; flex-direction: column; align-items: center;">
+				<Contact/>
 			</a-col>
 		</a-row>
 	</div>

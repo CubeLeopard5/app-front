@@ -1,24 +1,26 @@
 <template>
     <div :style="{ 'color': store.themes[store.themes.selected].text }">
         <div style="margin-bottom: 12px;">
-            <span style="font-weight: bold; font-size: 18px; color: #0f6a08;"> About me </span>
+            <span style="font-weight: bold; font-size: 24px; color: #0f6a08;"> {{ $t('about.title') }} </span>
         </div>
-        <div>
-            <span> Ayant suivi la formation de l'école Epitech (actuellement en 5ième année), je suis animé des technologies web et possède de larges compétences en C, CPP, Javascript et VueJS. </span>
-        </div>
-        <div>
-            <span> Mon expérience actuel me permet de: </span>
-        </div>
-        <div style="padding: 12px 0px 12px 24px;">
-            <div v-for="el, i in done" :key="i">
-                <span> {{ el }} </span>
+        <div style="font-size: 18px; text-align: justify; text-justify: inter-word;">
+            <div>
+                <span> {{ $t('about.one') }} </span>
             </div>
-        </div>
-        <div>
-            <span> Mes diverses expériences professionnelles me permettent de répondre efficacement à vos besoins et d'exceller dans mon domaine. </span>
-        </div>
-        <div>
-            <span> Je suis toujours à la recherche de nouvelles collaborations afin d’apporter mon expertise à vos projets. </span>
+            <div>
+                <span> {{ $t('about.two') }} </span>
+            </div>
+            <div style="padding: 12px 0px 12px 24px;">
+                <div v-for="el, i in 5" :key="i">
+                    <span> {{ $t(`about.three.${i}`) }} </span>
+                </div>
+            </div>
+            <div>
+                <span> {{ $t('about.four') }} </span>
+            </div>
+            <div>
+                <span> {{ $t('about.five') }} </span>
+            </div>
         </div>
     </div>
 </template>
@@ -30,15 +32,7 @@ import { useMainStore } from '~/store/main';
 export default defineComponent({
     setup() {
         const store = useMainStore();
-        const done = ref([
-            '- Réaliser une application web pour vos besoins',
-            '- Traduire un design de site internet en code',
-            '- Travailler avec des équipes de développeurs frontend et backend',
-            '- Répondre à des besoins de services backend',
-            '- Réaliser des scripts d\'automatisation de vos tâches'
-        ])
         return {
-            done,
             store,
         };
     },

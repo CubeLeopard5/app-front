@@ -12,6 +12,72 @@
         "experiences": "Expériences",
         "educations": "Éducations"
     },
+    "about": {
+        "title": "À propos",
+        "one": "Ayant suivi la formation de l'école Epitech (actuellement en 5ième année), je suis animé des technologies web et possède de larges compétences en C, CPP, Javascript et VueJS.",
+        "two": "Mon expérience actuel me permet de:",
+        "three": [
+            "- Réaliser une application web pour vos besoins",
+            "- Traduire un design de site internet en code",
+            "- Travailler avec des équipes de développeurs frontend et backend",
+            "- Répondre à des besoins de services backend",
+            "- Réaliser des scripts d'automatisation de vos tâches"
+        ],
+        "four": "Mes diverses expériences professionnelles me permettent de répondre efficacement à vos besoins et d'exceller dans mon domaine.",
+        "five": "Je suis toujours à la recherche de nouvelles collaborations afin d’apporter mon expertise à vos projets."
+    },
+    "skills": {
+        "title": "Compétences"
+    },
+    "projects": {
+        "title": "Projets",
+        "erudia": {
+            "title": "Erudia",
+            "description": "Projet de fin d'études à Epitech, mené par moi-même et 9 autres étudiants. Erudia est une plateforme permettant aux chercheurs de publier et reviewer des articles scientifiques. Elle permet également de rechercher des articles et de s'assurer de leur fiabilité."
+        },
+        "teams": {
+            "title": "my_teams",
+            "description": "Ce projet consiste à créer un serveur fonctionnant sur votre machine locale et un client qui peut se connecter à ce serveur. Le client peut ensuite se connecter et envoyer des messages à d'autres clients. Il démontre l'utilisation des fonctions select, send, read, bind et listen."
+        },
+        "link": "Lien vers le site",
+        "github": "Lien Github",
+        "more": "Plus d'informations"
+    },
+    "experiences": {
+        "title": "Éxpériences",
+        "items": [
+            {
+                "title": "Développeur Back-end",
+                "compagny": "ESPRI Digital",
+                "place": "Argentan, Normandie, France",
+                "time": "Avril 2022 - Juillet 2022",
+                "description": [
+                    "Stage de 4 mois c'est ESPRI Digital.",
+                    "Réalisation d'un système de sauvegarde de bases de données avec des conteneurs managés par Kubernetes."
+                ]
+            },
+            {
+                "title": "Développeur Front-end",
+                "compagny": "Axxone System",
+                "place": "Lyon, Auvergne-Rhône-Alpes, France",
+                "time": "Septembre 2021 - Mars 2022",
+                "description": [
+                    "Part-time de 2 jours/semaines chez Axxones System ayant durer 6 mois.",
+                    "Refonte du site de la Mutuelle Générale de Prévoyance."
+                ]
+            },
+            {
+                "title": "Développeur FullStack",
+                "compagny": "Axxone System",
+                "place": "Lyon, Auvergne-Rhône-Alpes, France",
+                "time": "Juillet 2020 - Décembre 2020",
+                "description": [
+                    "Stage de 5 mois chez Axxone System.",
+                    "Création d'éléments en vue js, avec également la mise en place de système de recherche et d'indexation full-text."
+                ]
+            }
+        ]
+    },
     "language": "Langue"
  }
  

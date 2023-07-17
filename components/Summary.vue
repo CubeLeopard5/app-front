@@ -60,10 +60,12 @@ export default defineComponent({
 
 <style scoped>
 .menu {
+    width: 200px;
+    height: 320px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 24px;
+    padding: 16px;
     margin-top: 12px;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -77,7 +79,7 @@ export default defineComponent({
     padding-left: 6px;
     gap: 5px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .menu-item:hover {

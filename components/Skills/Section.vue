@@ -1,9 +1,9 @@
 <template>
     <div :style="{ 'color': store.themes[store.themes.selected].text }">
         <div style="margin-bottom: 12px;">
-            <span style="font-weight: bold; font-size: 18px; color: #0f6a08;"> Skills </span>
+            <span style="font-weight: bold; font-size: 24px; color: #0f6a08;"> {{ $t('about.title') }} </span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 100px); margin-top: 24px;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 120px); margin-top: 24px; font-size: 18px;">
             <div v-for="el, i in data" :key="i">
                 <SkillsItem :data="el"/>
             </div>
