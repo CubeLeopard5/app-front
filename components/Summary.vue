@@ -1,31 +1,32 @@
 <template>
     <a-affix :offset-top="top">
-        <div class="menu" :style="{ border: `solid 1px ${store.themes[store.themes.selected].tertiary}`, background: store.themes[store.themes.selected].primary, color: store.themes[store.themes.selected].text }">
+        <div class="menu" :style="{ color: store.themes[store.themes.selected].text }">
             <div class="menu-item" @click="goToSection('about')">
-                <UserOutlined />
                 <span> {{ $t('summary.about') }} </span>
+                <UserOutlined />
             </div>
             <a-divider style="margin: unset;"/>
             <div class="menu-item" @click="goToSection('skills')">
-                <BulbOutlined />
                 <span> {{ $t('summary.skills') }} </span>
+                <BulbOutlined />
             </div>
             <a-divider style="margin: unset;"/>
             <div class="menu-item" @click="goToSection('projects')">
-                <ProjectOutlined />
                 <span> {{ $t('summary.projects') }} </span>
+                <ProjectOutlined />
             </div>
             <a-divider style="margin: unset;"/>
             <div class="menu-item" @click="goToSection('experiences')">
-                <LaptopOutlined />
                 <span> {{ $t('summary.experiences') }} </span>
+                <LaptopOutlined />
             </div>
             <a-divider style="margin: unset;"/>
             <div class="menu-item" @click="goToSection('educations')">
-                <BookOutlined />
                 <span> {{ $t('summary.educations') }} </span>
+                <BookOutlined />
             </div>
         </div>
+        <Contact/>
     </a-affix>
 </template>
 
@@ -60,15 +61,12 @@ export default defineComponent({
 
 <style scoped>
 .menu {
-    width: 200px;
     height: 320px;
     display: flex;
     flex-direction: column;
     gap: 16px;
     padding: 16px;
     margin-top: 12px;
-    border-radius: 12px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .menu-item {
@@ -76,7 +74,9 @@ export default defineComponent({
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     padding-left: 6px;
+    padding-right: 6px;
     gap: 5px;
     font-weight: bold;
     font-size: 20px;

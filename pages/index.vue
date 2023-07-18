@@ -1,10 +1,10 @@
 <template>
 	<div>
 		<a-row>
-			<a-col :span="3" style="display: flex; flex-direction: column; align-items: center;">
+			<a-col :span="4" :style="{ 'background': store.themes[store.themes.selected].primary }" style="display: flex; flex-direction: column; align-items: center;">
 				<Summary/>
 			</a-col>
-			<a-col :span="18">
+			<a-col :span="20">
 				<div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; padding-bottom: 24px; gap: 24px;" class="list-cards">
 					<AboutMe id="about" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
 					<SkillsSection id="skills" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
@@ -12,9 +12,6 @@
 					<ExperiencesSection id="experiences" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
 					<EducationsSection id="educations" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
 				</div>
-			</a-col>
-			<a-col :span="3" style="display: flex; flex-direction: column; align-items: center;">
-				<Contact/>
 			</a-col>
 		</a-row>
 	</div>

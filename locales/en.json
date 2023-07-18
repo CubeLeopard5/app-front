@@ -78,5 +78,31 @@
             }
         ]
     },
+    "educations": {
+        "title": "Educations",
+        "items": [
+            {
+                "title": "Master Epitech (En cours)",
+                "compagny": "EPITECH",
+                "place": "Paris, Ile-de-France, France",
+                "time": "September 2019 - August 2024",
+                "description": "The Grande Ecole program is Epitech Technology's historic curriculum. It takes place over 5 years and is designed to train IT experts. It offers a dense and evolving technical content, including a diversity of programming projects and covering numerous languages that will enable students to tackle all new technologies."
+            },
+            {
+                "title": "Faculty of engineering and computing",
+                "compagny": "Dublin City University",
+                "place": "Dublin, Irlande",
+                "time": "September 2022 - May 2023",
+                "description": "I spent my fourth year studying at Dublin City University in Ireland. This enabled me to expand my skills in web design, project management and learn new technologies."
+            },
+            {
+                "title": "Bac Sciences de l'ingénieur",
+                "compagny": "Lycée Albert Camus",
+                "place": "Lyon, Auvergne-Rhône-Alpes, France",
+                "time": "2019",
+                "description": "I obtained my baccalaureate in Engineering Sciences with a major in Computer and Digital Sciences (ISN)."
+            }
+        ]
+    },
     "language": "Language"
  }
