@@ -3,7 +3,7 @@
         <div style="margin-bottom: 12px;">
             <span style="font-weight: bold; font-size: 24px; color: #0f6a08;"> {{ $t('about.title') }} </span>
         </div>
-        <div :style="{ 'font-size': (width > 1400) ? '18px' : '16px', 'text-align': 'justify', 'text-justify': 'inter-word' }">
+        <div :style="{ 'font-size': (width > 1400) ? '18px' : '16px', 'text-align': 'justify', 'text-justify': 'inter-word' }" style="display: flex; flex-direction: column; gap: 24px;">
             <div>
                 <span> {{ $t('about.one') }} </span>
             </div>

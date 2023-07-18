@@ -2,7 +2,7 @@
 	<div>
 		<a-row>
 			<a-col :span="4" v-if="width > 1400" :style="{ 'background': store.themes[store.themes.selected].primary }" style="display: flex; flex-direction: column; align-items: center;">
-				<Summary/>
+				<Sider/>
 			</a-col>
 			<a-col :span="(width > 1400) ? 20: 24">
 				{{ width }}, {{ height }}

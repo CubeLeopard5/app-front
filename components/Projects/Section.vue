@@ -5,14 +5,14 @@
         </div>
         <div style="font-size: 18px; text-align: justify; text-justify: inter-word;">
             <a-row>
-                <a-col :span="6">
+                <a-col :span="6" v-if="width > 1400">
                     <div style="display: flex; flex-direction: column; align-items: center; padding: 0px 24px 0px 0px; gap: 6px;">
                         <img src="../../assets/Erudia_Logo_Black.png" alt="logo" style="width: 50%; height: 50%;" v-if="store.themes.selected == 'light'"/>
                         <img src="../../assets/Erudia_Logo.png" alt="logo" style="width: 50%; height: 50%;" v-else/>
                     </div>
                 </a-col>
-                <a-col :span="18">
-                    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                <a-col :span="(width > 1400) ? 18 : 24">
+                    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
                         <span style="font-weight: bold; font-size: 20px;"> {{ $t('projects.erudia.title') }} </span>
                         <a href="https://erudia.fr" target="_blank"> {{ $t('projects.link') }}</a>
                     </div>
@@ -24,13 +24,13 @@
             </a-row>
             <a-divider/>
             <a-row>
-                <a-col :span="6">
+                <a-col :span="6" v-if="width > 1400">
                     <div style="display: flex; flex-direction: column; align-items: center; padding: 0px 24px 0px 0px; gap: 6px;">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg/1200px-Microsoft_Office_Teams_%282018%E2%80%93present%29.svg.png" alt="logo" style="width: 50%; height: 50%;"/>
                     </div>
                 </a-col>
-                <a-col :span="18">
-                    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                <a-col :span="(width > 1400) ? 18 : 24">
+                    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
                         <span style="font-weight: bold; font-size: 20px;"> {{ $t('projects.teams.title') }} </span>
                         <a href="https://github.com/CubeLeopard5/my_teams" target="_blank"> {{ $t('projects.github') }} </a>
                     </div>
@@ -47,12 +47,15 @@
 <script>
 import { defineComponent } from 'vue';
 import { useMainStore } from '~/store/main';
+import { useWindowSize } from '@vueuse/core';
 
 export default defineComponent({
     setup() {
         const store = useMainStore();
+        const { width } = useWindowSize();
         return {
             store,
+            width,
         };
     },
 });
