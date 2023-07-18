@@ -1,5 +1,4 @@
 <template>
-    <a-layout>
         <!--a-layout-header :style="{ 'background': store.themes[store.themes.selected].primary }">
             <Header/>
         </a-layout-header-->
@@ -8,7 +7,6 @@
                 <NuxtPage/>
             </a-layout-content>
         </a-layout>
-    </a-layout>
 </template>
 
 <script setup>

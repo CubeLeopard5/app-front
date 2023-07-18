@@ -1,19 +1,19 @@
 <template>
-    <div :style="{ 'color': store.themes[store.themes.selected].text }">
-        <a-row>
-            <a-col :span="12" class="col-text">
-                <span class="title" style="display: flex; flex-direction: row; justify-content: center; margin-bottom: 12px;"> my_teams </span>
-                <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                    <a-button type="text" style="background: white; border-radius: 6px;"> Retour </a-button>
-                    <a href="https://github.com/CubeLeopard5/my_teams" target="_blank"> Lien Github</a>
+    <div :style="{ 'color': store.themes[store.themes.selected].text }" class="box">
+        <div class="col-text">
+            <span class="title" style="margin-bottom: 12px; margin-top: 12px;"> my_teams </span>
+            <div style="display: flex; flex-direction: row; align-items: center; width: 100%; justify-content: space-between;">
+                <NuxtLink to="/" style="margin-left: 12px;"> Retour </NuxtLink>
+                <a href="https://github.com/CubeLeopard5/my_teams" target="_blank" style="margin-right: 12px;"> Lien Github</a>
+            </div>
+            <div class="description">
+                <div class="descriptin-box">
+                    <span class="title" style="padding-left: 12px;"> Description </span>
+                    <span style="padding-left: 24px;"> This project is to make a server running on your local machine and a client that can connect to this server. The client can then login and send messages to other clients. It demonstrates the use of <code> select </code>, <code> send </code>, <code> read </code>, <code> bind </code> and <code> listen </code> functions. </span>
                 </div>
-                <div class="bloc">
-                    <span class="title"> Description </span>
-                    <span style="padding-left: 12px;"> This project is to make a server running on your local machine and a client that can connect to this server. The client can then login and send messages to other clients. It demonstrates the use of <code> select </code>, <code> send </code>, <code> read </code>, <code> bind </code> and <code> listen </code> functions. </span>
-                </div>
-                <div class="bloc">
-                    <span class="title"> Requirements </span>
-                    <div style="padding-left: 12px;">
+                <div class="descriptin-box">
+                    <span class="title" style="padding-left: 12px;"> Requirements </span>
+                    <div style="padding-left: 24px;">
                         <span> You need: </span>
                         <ul>
                             <li> gcc to compile with the makefile </li>
@@ -22,9 +22,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="bloc">
-                    <span class="title"> Compilation </span>
-                    <div style="padding-left: 12px;">
+                <div class="descriptin-box">
+                    <span class="title" style="padding-left: 12px;"> Compilation </span>
+                    <div style="padding-left: 24px;">
                         <span> Use make to compile the program with the Makefile. This will give you 3 binaries: </span>
                         <ul>
                             <li> <code> myteams_server </code> </li>
@@ -40,9 +40,9 @@
                         <span> Use <code> make fclean </code> to remove all .o files and binaries. </span>
                     </div>
                 </div>
-                <div class="bloc">
-                    <span class="title"> Usage </span>
-                    <div style="padding-left: 12px;" class="bloc">
+                <div class="descriptin-box">
+                    <span class="title" style="padding-left: 12px;"> Usage </span>
+                    <div style="display: flex; flex-direction: column; padding-left: 24px;" >
                         <span> To run the server: </span>
                         <code class="code-text"> ./myteams_server </code>
                         <span> This will make the server running on 127.0.0.1 and to use the default port 4000. You can add the option -p or --port to change the port number. </span>
@@ -53,9 +53,9 @@
                         <code class="code-text"> ./run_tests </code>
                     </div>
                 </div>
-                <div class="bloc">
-                    <span class="title"> Program commands </span>
-                    <div style="padding-left: 12px;" class="bloc">
+                <div class="descriptin-box">
+                    <span class="title" style="padding-left: 12px;"> Program commands </span>
+                    <div style="display: flex; flex-direction: column; padding-left: 24px;">
                         <span> Display help: </span>
                         <code class="code-text"> /help </code>
                         <span> Login with a username: </span>
@@ -75,16 +75,16 @@
                         <code class="code-text"> /quit </code>
                     </div>
                 </div>
-            </a-col>
-            <a-col :span="12" style="display: flex; flex-direction: column; align-items: center; margin-top: 24px;">
-                <span class="title" style="margin-bottom: 12px;"> Illustrations </span>
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 24px;">
-                    <img src="@/assets/my_teams_1.png" alt="">
-                    <img src="@/assets/my_teams_2.png" alt="">
-                    <img src="@/assets/my_teams_3.png" alt="">
-                </div>
-            </a-col>
-        </a-row>
+            </div>
+        </div>
+        <div class="col-text">
+            <span class="title" style="margin-bottom: 12px; margin-top: 12px;"> Illustrations </span>
+            <div class="box-images">
+                <img src="@/assets/my_teams_1.png" alt="" style="width: 100%;">
+                <img src="@/assets/my_teams_2.png" alt="" style="width: 100%;">
+                <img src="@/assets/my_teams_3.png" alt="" style="width: 100%;">
+            </div>
+        </div>
     </div>
 </template>
 
@@ -95,6 +95,15 @@ const store = useMainStore();
 </script>
 
 <style scoped>
+.box {
+    background: white;
+    border-radius: 12px;
+    margin: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .code-text {
     border: solid 1px #0f6a08;
     padding: 6px 6px 6px 6px;
@@ -103,22 +112,37 @@ const store = useMainStore();
 .col-text {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 50%;
     gap: 12px;
-    padding-left: 24px;
-    overflow-y: scroll;
-    height: 100vh;
-    margin-bottom: 24px;
-    margin-top: 24px;
 }
 
-.col-text::-webkit-scrollbar {
-    display: none;
-}
-
-.bloc {
+.description {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    height: 90vh;
+    overflow-y: scroll;
+    font-size: 18px;
+}
+
+.description::-webkit-scrollbar {
+    display: none;
+}
+
+.descriptin-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.box-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    padding: 24px;
 }
 
 .title {
