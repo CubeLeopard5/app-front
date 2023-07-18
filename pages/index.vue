@@ -27,6 +27,10 @@ const store = useMainStore();
 </script>
 
 <style>
+.image {
+	background-image: url("../assets/Logo_MIDI.png");
+	background-size: contain;
+}
 .card {
 	width: 75%;
     padding: 16px 16px 16px 16px;

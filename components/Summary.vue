@@ -1,11 +1,11 @@
 <template>
     <a-affix :offset-top="top" :style="{ 'color': store.themes[store.themes.selected].text }">
-        <div style="display: flex; flex-direction: column; gap: 24px;">
-            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly;">
-                <img src="@/assets/moi.png" style="height: 55px; width: 55px; border-radius: 50%;"/>
+        <div style="display: flex; flex-direction: column; gap: 24px; font-size: 18px;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                <img src="@/assets/Logo_MIDI.png" style="height: 200px; width: 200px;"/>
                 <span> Adrien Michaud </span>
             </div>
-            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <div style="display: flex; flex-direction: row; justify-content: space-around;">
                 <form style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
                     <label> {{ $t('language') }} </label>
                     <select v-model="$i18n.locale" style="border: solid 2px #0f6a08;">
@@ -18,6 +18,7 @@
                 </div>
             </div>
         </div>
+        <a-divider/>
         <div class="menu" :style="{ color: store.themes[store.themes.selected].text }">
             <div class="menu-item" @click="goToSection('about')">
                 <span> {{ $t('summary.about') }} </span>
@@ -44,6 +45,7 @@
                 <BookOutlined />
             </div>
         </div>
+        <a-divider style="margin: unset;"/>
         <Contact/>
     </a-affix>
 </template>
@@ -93,8 +95,8 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 16px;
-    margin-top: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .menu-item {
@@ -108,6 +110,7 @@ export default defineComponent({
     gap: 5px;
     font-weight: bold;
     font-size: 20px;
+    border: solid 1px transparent;
 }
 
 .menu-item:hover {

@@ -1,19 +1,18 @@
 <template>
-    <div class="contact" :style="{ background: store.themes[store.themes.selected].primary, color: store.themes[store.themes.selected].text }">
-        <span> Contact </span>
+    <div class="contact">
+        <span style="font-weight: bold; font-size: 20px;"> Contact </span>
         <a-divider style="margin: 0px;"/>
         <div>
             <span> Mail: </span>
             <span> michaudadrien78@gmail.com </span>
         </div>
-       <div>
+        <div>
             <span> Téléphone: </span>
             <span> 06 07 91 04 31 </span>
-       </div>
-        <div>
-            <a href="https://www.malt.fr/profile/adrienmichaud" target="_blank"> Malt </a>
         </div>
-        <div>
+        <div class="malt-linked">
+            <a href="https://www.malt.fr/profile/adrienmichaud" target="_blank"> Malt </a>
+            <a-divider type="vertical"/>
             <a href="https://www.linkedin.com/in/adrienmichaud/" target="_blank"> LinkedIn </a>
         </div>
     </div>
@@ -34,11 +33,19 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.malt-linked {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .contact {
     display: flex;
     flex-direction: column;
     gap: 16px;
     padding: 16px;
     margin-top: 12px;
+    font-size: 18px;
 }
 </style>

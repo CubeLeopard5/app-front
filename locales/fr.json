@@ -10,17 +10,17 @@
         "skills": "Compétences",
         "projects": "Projets",
         "experiences": "Expériences",
-        "educations": "Éducations"
+        "educations": "Formations"
     },
     "about": {
         "title": "À propos",
         "one": "Ayant suivi la formation de l'école Epitech (actuellement en 5ième année), je suis animé des technologies web et possède de larges compétences en C, CPP, Javascript et VueJS.",
-        "two": "Mon expérience actuel me permet de:",
+        "two": "Mon expérience actuelle me permet de:",
         "three": [
-            "- Réaliser une application web pour vos besoins",
+            "- Réaliser une application web adaptée à vos besoins",
             "- Traduire un design de site internet en code",
-            "- Travailler avec des équipes de développeurs frontend et backend",
-            "- Répondre à des besoins de services backend",
+            "- Travailler avec des équipes de développeurs front-end et back-end",
+            "- Répondre à des besoins de services back-end",
             "- Réaliser des scripts d'automatisation de vos tâches"
         ],
         "four": "Mes diverses expériences professionnelles me permettent de répondre efficacement à vos besoins et d'exceller dans mon domaine.",
@@ -52,7 +52,7 @@
                 "place": "Argentan, Normandie, France",
                 "time": "Avril 2022 - Juillet 2022",
                 "description": [
-                    "Stage de 4 mois c'est ESPRI Digital.",
+                    "Stage de 4 mois chez ESPRI Digital.",
                     "Réalisation d'un système de sauvegarde de bases de données avec des conteneurs managés par Kubernetes."
                 ]
             },
@@ -62,7 +62,7 @@
                 "place": "Lyon, Auvergne-Rhône-Alpes, France",
                 "time": "Septembre 2021 - Mars 2022",
                 "description": [
-                    "Part-time de 2 jours/semaines chez Axxones System ayant durer 6 mois.",
+                    "Part-time de 2 jours/semaines chez Axxones System sur une durée de 6 mois.",
                     "Refonte du site de la Mutuelle Générale de Prévoyance."
                 ]
             },
@@ -73,7 +73,7 @@
                 "time": "Juillet 2020 - Décembre 2020",
                 "description": [
                     "Stage de 5 mois chez Axxone System.",
-                    "Création d'éléments en vue js, avec également la mise en place de système de recherche et d'indexation full-text."
+                    "Création d'éléments en Vue.js, avec également la mise en place de système de recherche et d'indexation full-text."
                 ]
             }
         ]
@@ -100,7 +100,7 @@
                 "compagny": "Lycée Albert Camus",
                 "place": "Lyon, Auvergne-Rhône-Alpes, France",
                 "time": "2019",
-                "description": "Obtention de mon bac Sciences de l'ingénieur avec optien Informatique et Sciences du Numériques (ISN)."
+                "description": "Obtention de mon bac Sciences de l'ingénieur avec option Informatique et Sciences du Numérique (ISN)."
             }
         ]
     },

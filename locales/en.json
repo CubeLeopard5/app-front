@@ -23,7 +23,7 @@
             "- Respond to backend service needs",
             "- Create scripts to automate your tasks"
         ],
-        "four": "My diverse professional experience enables me to respond effectively to your needs and excel in my field.",
+        "four": "My various professional experience enables me to respond effectively to your needs and excel in my field.",
         "five": "I'm always on the lookout for new collaborations to bring my expertise to your projects."
     },
     "skills": {
@@ -37,7 +37,7 @@
         },
         "teams": {
             "title": "my_teams",
-            "description": "This project his to make a server running on your local machine and a client that can connect to this server. The client can then login and send messages to other clients. It demonstrates the use of select, send, read, bind and listen functions."
+            "description": "This project is to make a server running on your local machine and a client that can connect to this server. The client can then login and send messages to other clients. It demonstrates the use of select, send, read, bind and listen functions."
         },
         "link": "Link to website",
         "github": "Github link",
@@ -52,7 +52,7 @@
                 "place": "Argentan, Normandie, France",
                 "time": "April 2022 - July 2022",
                 "description": [
-                    "4-month internship with ESPRI Digital.",
+                    "4-month internship at ESPRI Digital.",
                     "Implementation of a database backup system with Kubernetes managed containers."
                 ]
             },
@@ -73,7 +73,7 @@
                 "time": "July 2020 - December 2020",
                 "description": [
                     "5-month internship at Axxone System.",
-                    "Creation of elements in js view, with full-text search and indexing."
+                    "Creation of elements in Vue.js with full-text search and indexing."
                 ]
             }
         ]
@@ -86,7 +86,7 @@
                 "compagny": "EPITECH",
                 "place": "Paris, Ile-de-France, France",
                 "time": "September 2019 - August 2024",
-                "description": "The Grande Ecole program is Epitech Technology's historic curriculum. It takes place over 5 years and is designed to train IT experts. It offers a dense and evolving technical content, including a diversity of programming projects and covering numerous languages that will enable students to tackle all new technologies."
+                "description": "The Grande Ecole Program is Epitech Technology's historic curriculum. It takes place over 5 years and is designed to train IT experts. It offers a dense and evolving technical content, including a diversity of programming projects and covering numerous languages that will enable students to tackle all new technologies."
             },
             {
                 "title": "Faculty of engineering and computing",
