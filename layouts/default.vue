@@ -1,8 +1,8 @@
 <template>
     <a-layout>
-        <a-layout-header :style="{ 'background': store.themes[store.themes.selected].primary }">
+        <!--a-layout-header :style="{ 'background': store.themes[store.themes.selected].primary }">
             <Header/>
-        </a-layout-header>
+        </a-layout-header-->
         <a-layout>
             <a-layout-content :style="{ 'background': store.themes[store.themes.selected].secondary, 'min-height': '100vh' }">
                 <NuxtPage/>
