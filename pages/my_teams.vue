@@ -1,5 +1,6 @@
 <template>
-    <div :style="{ 'color': store.themes[store.themes.selected].text }" class="box">
+    <div :style="{ 'color': store.themes[store.themes.selected].text, 'background': store.themes[store.themes.selected].primary }" class="box">
+        {{ store.themes[store.themes.selected].primary }}
         <div class="col-text">
             <span class="title" style="margin-bottom: 12px; margin-top: 12px;"> my_teams </span>
             <div style="display: flex; flex-direction: row; align-items: center; width: 100%; justify-content: space-between;">
@@ -42,7 +43,7 @@
                 </div>
                 <div class="descriptin-box">
                     <span class="title" style="padding-left: 12px;"> Usage </span>
-                    <div style="display: flex; flex-direction: column; padding-left: 24px;" >
+                    <div style="display: flex; flex-direction: column; padding-left: 24px; gap: 12px;">
                         <span> To run the server: </span>
                         <code class="code-text"> ./myteams_server </code>
                         <span> This will make the server running on 127.0.0.1 and to use the default port 4000. You can add the option -p or --port to change the port number. </span>
@@ -55,7 +56,7 @@
                 </div>
                 <div class="descriptin-box">
                     <span class="title" style="padding-left: 12px;"> Program commands </span>
-                    <div style="display: flex; flex-direction: column; padding-left: 24px;">
+                    <div style="display: flex; flex-direction: column; padding-left: 24px; gap: 12px;">
                         <span> Display help: </span>
                         <code class="code-text"> /help </code>
                         <span> Login with a username: </span>
@@ -96,7 +97,6 @@ const store = useMainStore();
 
 <style scoped>
 .box {
-    background: white;
     border-radius: 12px;
     margin: 24px;
     display: flex;

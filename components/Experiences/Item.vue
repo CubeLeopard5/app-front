@@ -1,12 +1,12 @@
 <template>
     <a-row style="font-size: 18px; text-align: justify; text-justify: inter-word;">
-        <a-col :span="6">
+        <a-col :span="6" v-if="width > 1400">
             <div style="display: flex; flex-direction: column; align-items: center; padding: 0px 24px 0px 0px; gap: 6px;">
                 <img :src="img" alt="logo" style="width: 50%; height: 50%;"/>
                 <span> {{ $t(`experiences.items.${index}.compagny`) }} </span>
             </div>
         </a-col>
-        <a-col :span="18">
+        <a-col :span="(width > 1400) ? 18 : 24">
             <div style="display: flex; flex-direction: row; justify-content: space-between;">
                 <span style="font-weight: bold; font-size: 20px;"> {{ $t(`experiences.items.${index}.title`) }} </span>
                 <span> {{ $t(`experiences.items.${index}.time`) }} </span>
@@ -24,7 +24,9 @@
 </template>
 
 <script>
-export default {
+import { useWindowSize } from '@vueuse/core';
+
+export default defineComponent({
     props: {
         img: {
             type: String,
@@ -35,5 +37,11 @@ export default {
             required: true,
         }
     },
-}
+    setup() {
+        const { width } = useWindowSize();
+        return {
+            width,
+        };
+    },
+});
 </script>

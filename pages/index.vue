@@ -1,11 +1,11 @@
 <template>
 	<div>
+		<client-only>
 		<a-row>
 			<a-col :span="4" v-if="width > 1400" :style="{ 'background': store.themes[store.themes.selected].primary }" style="display: flex; flex-direction: column; align-items: center;">
 				<Sider/>
 			</a-col>
-			<a-col :span="(width > 1400) ? 20: 24">
-				{{ width }}, {{ height }}
+			<a-col :span="(width > 1400) ? 20: 24" :style="{ 'background-color': store.themes[store.themes.selected].secondary }">
 				<div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; padding-bottom: 24px; gap: 24px;" class="list-cards">
 					<AboutMe id="about" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
 					<SkillsSection id="skills" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
@@ -15,6 +15,7 @@
 				</div>
 			</a-col>
 		</a-row>
+		</client-only>
 	</div>
 </template>
 

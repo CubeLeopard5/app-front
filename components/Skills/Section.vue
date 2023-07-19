@@ -3,7 +3,7 @@
         <div style="margin-bottom: 12px;">
             <span style="font-weight: bold; font-size: 24px; color: #0f6a08;"> {{ $t('skills.title') }} </span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 120px); margin-top: 24px; font-size: 18px;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 120px); margin-top: 24px;" :style="{ 'font-size': (width > 1400) ? '18px' : '16px' }">
             <div v-for="el, i in data" :key="i">
                 <SkillsItem :data="el"/>
             </div>
@@ -14,10 +14,12 @@
 <script>
 import { defineComponent, ref } from 'vue';
 import { useMainStore } from '~/store/main';
+import { useWindowSize } from '@vueuse/core';
 
 export default defineComponent({
     setup() {
         const store = useMainStore();
+        const { width } = useWindowSize();
         const data = ref([
             {
                 img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
@@ -70,6 +72,7 @@ export default defineComponent({
         return {
             store,
             data,
+            width,
         };
     },
 });

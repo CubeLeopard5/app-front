@@ -8,7 +8,7 @@
             <div style="display: flex; flex-direction: row; justify-content: space-around;">
                 <form style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
                     <label> {{ $t('language') }} </label>
-                    <select v-model="$i18n.locale" style="border: solid 2px #0f6a08;">
+                    <select v-model="$i18n.locale" style="border: solid 2px #0f6a08; color: black;">
                         <option value="en">en</option>
                         <option value="fr">fr</option>
                     </select>

@@ -3,7 +3,7 @@
         <div style="margin-bottom: 12px;">
             <span style="font-weight: bold; font-size: 18px; color: #0f6a08; font-size: 24px;"> {{ $t('projects.title') }} </span>
         </div>
-        <div style="font-size: 18px; text-align: justify; text-justify: inter-word;">
+        <div :style="{ 'font-size': (width > 1400) ? '18px' : '16px' }" style="text-align: justify; text-justify: inter-word;">
             <a-row>
                 <a-col :span="6" v-if="width > 1400">
                     <div style="display: flex; flex-direction: column; align-items: center; padding: 0px 24px 0px 0px; gap: 6px;">
