@@ -1,5 +1,5 @@
 <template>
-    <div :style="{ 'color': store.themes[store.themes.selected].text }">
+    <div>
         <div style="margin-bottom: 12px;">
             <span style="font-weight: bold; font-size: 18px; color: #0f6a08; font-size: 24px;"> {{ $t('projects.title') }} </span>
         </div>
@@ -7,7 +7,7 @@
             <a-row>
                 <a-col :span="6" v-if="width > 1400">
                     <div style="display: flex; flex-direction: column; align-items: center; padding: 0px 24px 0px 0px; gap: 6px;">
-                        <img src="../../assets/Erudia_Logo_Black.png" alt="logo" style="width: 50%; height: 50%;" v-if="store.themes.selected == 'light'"/>
+                        <img src="../../assets/Erudia_Logo_Black.png" alt="logo" style="width: 50%; height: 50%;" v-if="$colorMode.preference == 'light'"/>
                         <img src="../../assets/Erudia_Logo.png" alt="logo" style="width: 50%; height: 50%;" v-else/>
                     </div>
                 </a-col>
@@ -46,16 +46,15 @@
 
 <script>
 import { defineComponent } from 'vue';
-import { useMainStore } from '~/store/main';
 import { useWindowSize } from '@vueuse/core';
 
 export default defineComponent({
     setup() {
-        const store = useMainStore();
         const { width } = useWindowSize();
+        const colorMode = useColorMode();
         return {
-            store,
             width,
+            colorMode
         };
     },
 });

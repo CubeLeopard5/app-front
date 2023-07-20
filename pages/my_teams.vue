@@ -1,6 +1,5 @@
 <template>
-    <div :style="{ 'color': store.themes[store.themes.selected].text, 'background': store.themes[store.themes.selected].primary }" class="box">
-        {{ store.themes[store.themes.selected].primary }}
+    <div class="box">
         <div class="col-text">
             <span class="title" style="margin-bottom: 12px; margin-top: 12px;"> my_teams </span>
             <div style="display: flex; flex-direction: row; align-items: center; width: 100%; justify-content: space-between;">
@@ -89,16 +88,8 @@
     </div>
 </template>
 
-<script setup>
-import { useMainStore } from '~/store/main';
-
-const store = useMainStore();
-</script>
-
 <style scoped>
 .box {
-    border-radius: 12px;
-    margin: 24px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

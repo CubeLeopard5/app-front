@@ -2,16 +2,16 @@
 	<div>
 		<client-only>
 		<a-row>
-			<a-col :span="4" v-if="width > 1400" :style="{ 'background': store.themes[store.themes.selected].primary }" style="display: flex; flex-direction: column; align-items: center;">
+			<a-col :span="4" v-if="width > 1400" style="display: flex; flex-direction: column; align-items: center;">
 				<Sider/>
 			</a-col>
-			<a-col :span="(width > 1400) ? 20: 24" :style="{ 'background-color': store.themes[store.themes.selected].secondary }">
+			<a-col :span="(width > 1400) ? 20: 24">
 				<div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; padding-bottom: 24px; gap: 24px;" class="list-cards">
-					<AboutMe id="about" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
-					<SkillsSection id="skills" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
-					<ProjectsSection id="projects" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
-					<ExperiencesSection id="experiences" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
-					<EducationsSection id="educations" :style="{ 'background': store.themes[store.themes.selected].primary }" class="card"/>
+					<AboutMe id="about" class="card"/>
+					<SkillsSection id="skills" class="card"/>
+					<ProjectsSection id="projects" class="card"/>
+					<ExperiencesSection id="experiences"  class="card"/>
+					<EducationsSection id="educations" class="card"/>
 				</div>
 			</a-col>
 		</a-row>
@@ -20,11 +20,9 @@
 </template>
 
 <script setup>
-import { useMainStore } from '~/store/main';
 import { useWindowSize } from '@vueuse/core';
 
 const { width, height } = useWindowSize();
-const store = useMainStore();
 </script>
 
 <style>
@@ -41,6 +39,7 @@ const store = useMainStore();
     animation-name: article-card-unselected;
   	animation-duration: 0.5s;
     transform: scale(1);
+	background: var(--bg);
 }
 
 @keyframes article-card-selected {
@@ -60,7 +59,7 @@ const store = useMainStore();
 }
 
 .list-cards {
-	margin-bottom: 24px;
+	background: var(--bg-secondary);
 }
 
 body::-webkit-scrollbar {

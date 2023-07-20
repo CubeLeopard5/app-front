@@ -18,20 +18,6 @@
     </div>
 </template>
 
-<script>
-import { defineComponent, ref } from 'vue';
-import { useMainStore } from '~/store/main';
-
-export default defineComponent({
-    setup() {
-        const store = useMainStore();
-        return {
-            store,
-        }
-    },
-});
-</script>
-
 <style scoped>
 .malt-linked {
     display: flex;

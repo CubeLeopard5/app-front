@@ -1,11 +1,11 @@
 <template>
-    <a-affix :offset-top="top" :style="{ 'color': store.themes[store.themes.selected].text }">
+    <a-affix :offset-top="top" class="sider">
         <div style="display: flex; flex-direction: column; gap: 24px; font-size: 18px;">
             <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
                 <img src="@/assets/Logo_MIDI.png" style="height: 200px; width: 200px;"/>
                 <span> Adrien Michaud </span>
             </div>
-            <div style="display: flex; flex-direction: row; justify-content: space-around;">
+            <div style="display: flex; flex-direction: row; justify-content: space-around; font-size: 16px;">
                 <form style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
                     <label> {{ $t('language') }} </label>
                     <select v-model="$i18n.locale" style="border: solid 2px #0f6a08; color: black;">
@@ -13,13 +13,17 @@
                         <option value="fr">fr</option>
                     </select>
                 </form>
-                <div style="display: flex; flex-direction: row; align-items: center;">
-                    <a-switch v-model:checked="checked" checked-children="light" un-checked-children="dark" @change="changeTheme" style="background: #0f6a08;"/>
-                </div>
+                <div style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
+					<span>Color mode:</span>
+					<select v-model="$colorMode.preference" style="border: solid 2px #0f6a08; color: black;">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+					</select>
+				</div>
             </div>
         </div>
         <a-divider/>
-        <div class="menu" :style="{ color: store.themes[store.themes.selected].text }">
+        <div class="menu">
             <div class="menu-item" @click="goToSection('about')">
                 <span> {{ $t('summary.about') }} </span>
                 <UserOutlined />
@@ -53,7 +57,6 @@
 <script>
 import { defineComponent, ref } from 'vue';
 import { UserOutlined, BulbOutlined, ProjectOutlined, LaptopOutlined, BookOutlined } from '@ant-design/icons-vue';
-import { useMainStore } from '~/store/main';
 
 export default defineComponent({
     components: {
@@ -66,24 +69,14 @@ export default defineComponent({
     setup() {
         const top = ref(24);
         const router = useRouter();
-        const store = useMainStore();
         const goToSection = (place) => {
             router.push({path: '/', hash: `#${place}`})
         }
-        const checked = ref(false);
-        const changeTheme = () => {
-            if (store.themes.selected == 'light') {
-                store.themes.selected = 'dark';
-            } else {
-                store.themes.selected = 'light';
-            }
-        }
+        const colorMode = useColorMode();
         return {
             top,
             goToSection,
-            store,
-            checked,
-            changeTheme,
+            colorMode,
         }
     },
 });

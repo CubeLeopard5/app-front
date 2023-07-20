@@ -1,5 +1,5 @@
 <template>
-    <div :style="{ 'color': store.themes[store.themes.selected].text }">
+    <div>
         <div style="margin-bottom: 12px;">
             <span style="font-weight: bold; font-size: 24px; color: #0f6a08;"> {{ $t('about.title') }} </span>
         </div>
@@ -27,15 +27,12 @@
 
 <script>
 import { defineComponent, ref } from 'vue';
-import { useMainStore } from '~/store/main';
 import { useWindowSize } from '@vueuse/core';
 
 export default defineComponent({
     setup() {
-        const store = useMainStore();
         const { width } = useWindowSize();
         return {
-            store,
             width,
         };
     },
