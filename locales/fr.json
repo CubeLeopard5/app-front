@@ -104,6 +104,17 @@
             }
         ]
     },
+    "erudia": {
+        "description": {
+            "title": "Description",
+            "first": "Projet de fin d'études à Epitech, mené par moi-même et 9 autres étudiants. Erudia est une plateforme destinée aux chercheurs afin de leur permettre de publier et reviewer des articles scientifiques. Elle permet également de rechercher des articles scientifiques et de s'assurer de leur fiabilité.",
+            "second": "Aujourd'hui, afin de faire relire son article et le publier, il faut passer par une maison d'édition. Ces dernières peuvent prendre un prix élevé aux chercheur pour leurs prestations. De même, les chercheurs doivent payer pour la consultation d'un article. Tout cela rend l'accès à l'information et au développement des recherches plus difficile.",
+            "third": "En France la plus grande plateforme d'archives scientifiques est l'HAL (Hyper Article en Ligne) mais les articles scientifique ne sont par revu par leurs pairs sauf en cas de publication dans des revues.",
+            "fourth": "Sci-Hub a été créé pour contrer les prix abérant des maison d'édition mais le problème est que cette plateforme prends les recherches sans l'avis de leurs auteurs et est donc illégal.",
+            "fifth": "Erudia vise à jouer le rôle d'une maison d'édition en permettant la relecture anonyme des travaux des chercheurs par leurs pairs ainsi que de publier leurs travaux en ligne.",
+            "sixth": "Avec ce projet, moi et mon équipe avons également une volonté d’apporter plus d'interactivité entre les acteurs du monde de la recherche. Pour cela nous souhaitons apporter un système de commentaire au niveau des articles où les lecteurs pourraient réagir, poser des questions et se répondre entre eux. Nous apporterons également un espace pour communiquer de façon générale par rapport aux articles."
+        }
+    },
     "language": "Langue"
  }
  

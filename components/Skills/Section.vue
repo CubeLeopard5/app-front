@@ -59,7 +59,7 @@ export default defineComponent({
                 title: "Bash",
             },
             {
-                img: "https://upload.wikimedia.org/wikipedia/commons/4/45/NuxtJS_Logo.png",
+                img: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Nuxt-js.png",
                 title: "Nuxt.js",
             },
             {

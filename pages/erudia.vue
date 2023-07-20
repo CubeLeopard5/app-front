@@ -6,9 +6,26 @@
                 <NuxtLink to="/" style="margin-left: 12px;"> Retour </NuxtLink>
                 <a href="https://erudia.fr" target="_blank" style="margin-right: 12px;"> Lien </a>
             </div>
-            <div>
-                <span> Description </span>
-                <span> Projet de fin d'études à Epitech, mené par moi-même et 9 autres étudiants. Erudia est une plateforme permettant aux chercheurs de publier et reviewer des articles scientifiques. Elle permet également de rechercher des articles et de s'assurer de leur fiabilité. </span>
+            <div class="description">
+                <div class="descriptin-box">
+                    <span class="title" style="padding-left: 12px;"> {{ $t('erudia.description.title') }} </span>
+                    <div style="padding-left: 24px;" class="descriptin-box">
+                        <span> {{ $t('erudia.description.first') }} </span>
+                        <span> {{ $t('erudia.description.second') }} </span>
+                        <span> {{ $t('erudia.description.third') }} </span>
+                        <span> {{ $t('erudia.description.fourth') }} </span>
+                        <span> {{ $t('erudia.description.fifth') }} </span>
+                        <span> {{ $t('erudia.description.sixth') }} </span>
+                    </div>
+                </div>
+                <div class="descriptin-box">
+                    <span class="title" style="padding-left: 12px;"> Technical resources </span>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 120px);" :style="{ 'font-size': (width > 1400) ? '18px' : '16px' }">
+                        <div v-for="el, i in data" :key="i">
+                            <SkillsItem :data="el"/>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-text">
@@ -21,6 +38,47 @@
         </div>
     </div>
 </template>
+
+<script>
+import { defineComponent, ref } from 'vue';
+import { useWindowSize } from '@vueuse/core';
+
+export default defineComponent({
+    setup() {
+        const { width } = useWindowSize();
+        const data = ref([
+            {
+                img: "https://cdn.iconscout.com/icon/free/png-256/free-django-11-1175036.png",
+                title: "Django",
+            },
+            {
+                img: "https://variwiki.com/images/a/a1/Docker.png",
+                title: "Docker",
+            },
+            {
+                img: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Nuxt-js.png",
+                title: "Nuxt.js",
+            },
+            {
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/250px-Git_icon.svg.png",
+                title: "Git",
+            },
+            {
+                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png",
+                title: "postGreSQL",
+            },
+            {
+                img: "https://kazupon.github.io/vue-i18n/vue-i18n-logo.png",
+                title: "Vue-i18n",
+            },
+        ])
+        return {
+            data,
+            width,
+        };
+    },
+});
+</script>
 
 <style scoped>
 .box {
@@ -37,6 +95,25 @@
     gap: 12px;
 }
 
+.descriptin-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 90vh;
+    overflow-y: scroll;
+    font-size: 18px;
+}
+
+.description::-webkit-scrollbar {
+    display: none;
+}
+
 .box-images {
     display: flex;
     flex-direction: column;
@@ -44,6 +121,12 @@
     gap: 24px;
     width: 100%;
     padding: 24px;
+    overflow-y: scroll;
+    height: 90vh;
+}
+
+.box-images::-webkit-scrollbar {
+    display: none;
 }
 
 .title {
