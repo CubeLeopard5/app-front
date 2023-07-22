@@ -41,6 +41,7 @@
         },
         "link": "Link to website",
         "github": "Github link",
+        "back": "Back",
         "more": "More information"
     },
     "experiences": {
@@ -113,6 +114,48 @@
             "fourth": "Sci-Hub was created to counter the aberrant prices of publishing houses, but the problem is that this platform takes research without the opinion of its authors and is therefore illegal.",
             "fifth": "Erudia aims to play the role of a publishing house by allowing researchers' work to be anonymously peer-reviewed and published online.",
             "sixth": "With this project, I and my team also want to bring more interactivity between the players in the world of research. To do this, we want to provide a comment system for the articles where readers can react, ask questions and respond to each other. We will also be providing a space for general communication about the articles."
+        }
+    },
+    "teams": {
+        "description": {
+            "title": "Description",
+            "first": "This project is to make a server in C running on your local machine and a client that can connect to this server. The client can then login and send messages to other clients. It demonstrates the use of",
+            "and": "and",
+            "functions": "functions."
+        },
+        "requirements": {
+            "title": "Requirements",
+            "need": "You need:",
+            "gcc": "gcc to compile with the makefile",
+            "lib": "libuuid-devel to use this program",
+            "criterion": "criterion to run the tests"
+        },
+        "compilation": {
+            "title": "Compilation",
+            "first": "Use make to compile the program with the Makefile. This will give you 3 binaries:",
+            "second": "You can add to the make command the target of compilation:",
+            "use": "Use",
+            "three": "to remove all .o files and binaries."
+        },
+        "usage": {
+            "title": "Usage",
+            "first": "To run the server:",
+            "second": "This will make the server running on 127.0.0.1 and to use the default port 4000. You can add the option -p or --port to change the port number.",
+            "three": "To run the client:",
+            "fourth": "Choose the host and port number of an existing myteams_server running instance.",
+            "fifth": "To run the tests:"
+        },
+        "commands": {
+            "title": "Program commands",
+            "first": "Display help:",
+            "second": "Login with a username:",
+            "fourth": "#this will return you an uuid",
+            "fifth": "Send message to someone:",
+            "sixth": "See all users information:",
+            "seven": "See one user information:",
+            "eight": "See conversation with a user:",
+            "nine": "Logout:",
+            "ten": "Quit the program:"
         }
     },
     "language": "Language"

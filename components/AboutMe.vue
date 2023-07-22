@@ -22,6 +22,7 @@
                 <span> {{ $t('about.five') }} </span>
             </div>
         </div>
+        <Contact v-if="width < 1400"/>
     </div>
 </template>
 

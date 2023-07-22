@@ -3,8 +3,8 @@
         <div class="col-text">
             <span class="title" style="margin-bottom: 12px; margin-top: 12px;"> Erudia </span>
             <div style="display: flex; flex-direction: row; align-items: center; width: 100%; justify-content: space-between;">
-                <NuxtLink to="/" style="margin-left: 12px;"> Retour </NuxtLink>
-                <a href="https://erudia.fr" target="_blank" style="margin-right: 12px;"> Lien </a>
+                <NuxtLink to="/" style="margin-left: 12px;"> {{ $t('projects.back') }} </NuxtLink>
+                <a href="https://erudia.fr" target="_blank" style="margin-right: 12px;"> {{ $t('projects.link') }} </a>
             </div>
             <div class="description">
                 <div class="descriptin-box">

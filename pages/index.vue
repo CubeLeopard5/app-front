@@ -6,6 +6,22 @@
 				<Sider/>
 			</a-col>
 			<a-col :span="(width > 1400) ? 20: 24">
+				<div style="display: flex; flex-direction: row; justify-content: space-around; font-size: 16px; margin: 12px;" v-if="width < 1400">
+					<form style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
+						<label> {{ $t('language') }} </label>
+						<select v-model="$i18n.locale" style="border: solid 2px #0f6a08; color: black;">
+							<option value="en">en</option>
+							<option value="fr">fr</option>
+						</select>
+					</form>
+					<div style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
+						<span>Color mode:</span>
+						<select v-model="$colorMode.preference" style="border: solid 2px #0f6a08; color: black;">
+							<option value="light">Light</option>
+							<option value="dark">Dark</option>
+						</select>
+					</div>
+				</div>
 				<div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; padding-bottom: 24px; gap: 24px;" class="list-cards">
 					<AboutMe id="about" class="card"/>
 					<SkillsSection id="skills" class="card"/>

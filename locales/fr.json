@@ -41,6 +41,7 @@
         },
         "link": "Lien vers le site",
         "github": "Lien Github",
+        "back": "Retour",
         "more": "Plus d'informations"
     },
     "experiences": {
@@ -113,6 +114,48 @@
             "fourth": "Sci-Hub a été créé pour contrer les prix abérant des maison d'édition mais le problème est que cette plateforme prends les recherches sans l'avis de leurs auteurs et est donc illégal.",
             "fifth": "Erudia vise à jouer le rôle d'une maison d'édition en permettant la relecture anonyme des travaux des chercheurs par leurs pairs ainsi que de publier leurs travaux en ligne.",
             "sixth": "Avec ce projet, moi et mon équipe avons également une volonté d’apporter plus d'interactivité entre les acteurs du monde de la recherche. Pour cela nous souhaitons apporter un système de commentaire au niveau des articles où les lecteurs pourraient réagir, poser des questions et se répondre entre eux. Nous apporterons également un espace pour communiquer de façon générale par rapport aux articles."
+        }
+    },
+    "teams": {
+        "description": {
+            "title": "Description",
+            "first": "Ce projet consiste à créer un serveur en C fonctionnant sur votre machine locale et un client qui peut se connecter à ce serveur. Le client peut alors se connecter et envoyer des messages à d'autres clients. Il démontre l'utilisation de",
+            "and": "et",
+            "functions": "fonctions."
+        },
+        "requirements": {
+            "title": "Prérequis",
+            "need": "Vous avez besoin de:",
+            "gcc": "gcc pour compiler le makefile",
+            "lib": "libuuid-devel pour utiliser le programme",
+            "criterion": "criterion pour executer les tests"
+        },
+        "compilation": {
+            "title": "Compilation",
+            "first": "Utilisez make pour compiler le programme avec le Makefile. Vous obtiendrez ainsi 3 binaires :",
+            "second": "Vous pouvez ajouter à la commande make la cible de la compilation :",
+            "use": "Utilisez",
+            "three": "pour supprimer tous les fichiers .o et les fichiers binaires."
+        },
+        "usage": {
+            "title": "Usage",
+            "first": "Pour executer le serveur:",
+            "second": "Le serveur fonctionnera alors sur 127.0.0.1 et utilisera le port par défaut 4000. Vous pouvez ajouter l'option -p ou --port pour modifier le numéro de port.",
+            "three": "pour executer le client:",
+            "fourth": "Choisissez l'hôte et le numéro de port d'une instance existante de myteams_server.",
+            "fifth": "Pour executer les tests:"
+        },
+        "commands": {
+            "title": "Commandes du programme",
+            "first": "Afficher l'aide:",
+            "second": "Se connecter avec un username:",
+            "fourth": "#Cela va vous retourner un uuid",
+            "fifth": "Envoyer un message à quelqu'un:",
+            "sixth": "Voir les informations de tous les utilisateurs:",
+            "seven": "Voir les information d'un utilisateur:",
+            "eight": "Voir la conversation avec un utilisateur:",
+            "nine": "Déconnexion:",
+            "ten": "Quitter le programme:"
         }
     },
     "language": "Langue"
