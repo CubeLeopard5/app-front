@@ -38,7 +38,7 @@
 <script setup>
 import { useWindowSize } from '@vueuse/core';
 
-const { width, height } = useWindowSize();
+const { width } = useWindowSize();
 </script>
 
 <style>

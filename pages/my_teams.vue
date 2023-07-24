@@ -1,19 +1,19 @@
 <template>
-    <div class="box">
-        <div class="col-text">
+    <div class="box" :style="{ '--dir': width > 1400 ? 'row' : 'column' }">
+        <div class="col-text" :style="{ '--size': width > 1400 ? '50%' : '100%' }">
             <span class="title" style="margin-bottom: 12px; margin-top: 12px;"> my_teams </span>
             <div style="display: flex; flex-direction: row; align-items: center; width: 100%; justify-content: space-between;">
                 <NuxtLink to="/" style="margin-left: 12px;"> {{ $t('projects.back') }} </NuxtLink>
                 <a href="https://github.com/CubeLeopard5/my_teams" target="_blank" style="margin-right: 12px;"> {{ $t('projects.github') }} </a>
             </div>
-            <div class="description">
+            <div class="description" :style="(width > 1400) ? { 'height': '90vh', 'overflow-y': 'scroll' } : {}">
                 <div class="descriptin-box">
                     <span class="title" style="padding-left: 12px;"> {{ $t('teams.description.title') }} </span>
-                    <span style="padding-left: 24px;"> {{ $t('teams.description.first') }} <code> select </code>, <code> send </code>, <code> read </code>, <code> bind </code> {{ $t('teams.description.and') }} <code> listen </code> {{ $t('teams.description.functions') }} </span>
+                    <span style="padding-left: 24px; padding-right: 24px;"> {{ $t('teams.description.first') }} <code> select </code>, <code> send </code>, <code> read </code>, <code> bind </code> {{ $t('teams.description.and') }} <code> listen </code> {{ $t('teams.description.functions') }} </span>
                 </div>
                 <div class="descriptin-box">
                     <span class="title" style="padding-left: 12px;"> {{ $t('teams.requirements.title') }} </span>
-                    <div style="padding-left: 24px;">
+                    <div style="padding-left: 24px; padding-right: 24px;">
                         <span> {{ $t('teams.requirements.need') }} </span>
                         <ul>
                             <li> {{ $t('teams.requirements.gcc') }} </li>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="descriptin-box">
                     <span class="title" style="padding-left: 12px;"> {{ $t('teams.compilation.title') }} </span>
-                    <div style="padding-left: 24px;">
+                    <div style="padding-left: 24px; padding-right: 24px;">
                         <span> {{ $t('teams.compilation.first') }} </span>
                         <ul>
                             <li> <code> myteams_server </code> </li>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="descriptin-box">
                     <span class="title" style="padding-left: 12px;"> {{ $t('teams.usage.title') }} </span>
-                    <div style="display: flex; flex-direction: column; padding-left: 24px; gap: 12px;">
+                    <div style="display: flex; flex-direction: column; padding-left: 24px; padding-right: 24px; gap: 12px;">
                         <span> {{ $t('teams.usage.first') }} </span>
                         <code class="code-text"> ./myteams_server </code>
                         <span> {{ $t('teams.usage.second') }} </span>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="descriptin-box">
                     <span class="title" style="padding-left: 12px;"> {{ $t('teams.commands.title') }} </span>
-                    <div style="display: flex; flex-direction: column; padding-left: 24px; gap: 12px;">
+                    <div style="display: flex; flex-direction: column; padding-left: 24px; padding-right: 24px; gap: 12px;">
                         <span> {{ $t('teams.commands.first') }} </span>
                         <code class="code-text"> /help </code>
                         <span> {{ $t('teams.commands.second') }} </span>
@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-text">
+        <div class="col-text" :style="{ '--size': width > 1400 ? '50%' : '100%' }">
             <span class="title" style="margin-bottom: 12px; margin-top: 12px;"> Illustrations </span>
             <div class="box-images">
                 <img src="@/assets/my_teams_1.png" alt="" style="width: 100%;">
@@ -87,11 +87,19 @@
     </div>
 </template>
 
+<script setup>
+import { useWindowSize } from '@vueuse/core';
+
+const { width } = useWindowSize();
+</script>
+
 <style scoped>
 .box {
     display: flex;
-    flex-direction: row;
+    flex-direction: var(--dir);
     justify-content: space-around;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .code-text {
@@ -103,7 +111,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: var(--size);
     gap: 12px;
 }
 
@@ -111,8 +119,6 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    height: 90vh;
-    overflow-y: scroll;
     font-size: 18px;
 }
 

@@ -1,15 +1,15 @@
 <template>
-    <div class="box">
-        <div class="col-text">
+    <div class="box" :style="{ '--dir': width > 1400 ? 'row' : 'column' }">
+        <div class="col-text" :style="{ '--size': width > 1400 ? '50%' : '100%' }">
             <span class="title" style="margin-bottom: 12px; margin-top: 12px;"> Erudia </span>
             <div style="display: flex; flex-direction: row; align-items: center; width: 100%; justify-content: space-between;">
                 <NuxtLink to="/" style="margin-left: 12px;"> {{ $t('projects.back') }} </NuxtLink>
                 <a href="https://erudia.fr" target="_blank" style="margin-right: 12px;"> {{ $t('projects.link') }} </a>
             </div>
-            <div class="description">
+            <div class="description" :style="(width > 1400) ? { 'height': '90vh', 'overflow-y': 'scroll' } : {}">
                 <div class="descriptin-box">
                     <span class="title" style="padding-left: 12px;"> {{ $t('erudia.description.title') }} </span>
-                    <div style="padding-left: 24px;" class="descriptin-box">
+                    <div style="padding-left: 24px; padding-right: 24px;" class="descriptin-box">
                         <span> {{ $t('erudia.description.first') }} </span>
                         <span> {{ $t('erudia.description.second') }} </span>
                         <span> {{ $t('erudia.description.third') }} </span>
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-text">
+        <div class="col-text" :style="{ '--size': width > 1400 ? '50%' : '100%' }">
             <span class="title" style="margin-bottom: 12px; margin-top: 12px;"> Illustrations </span>
             <div class="box-images">
                 <img src="@/assets/erudia_1.png" alt="" style="width: 90%; height: 90%;">
@@ -39,59 +39,54 @@
     </div>
 </template>
 
-<script>
-import { defineComponent, ref } from 'vue';
+<script setup>
+import { ref } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 
-export default defineComponent({
-    setup() {
-        const { width } = useWindowSize();
-        const data = ref([
-            {
-                img: "https://cdn.iconscout.com/icon/free/png-256/free-django-11-1175036.png",
-                title: "Django",
-            },
-            {
-                img: "https://variwiki.com/images/a/a1/Docker.png",
-                title: "Docker",
-            },
-            {
-                img: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Nuxt-js.png",
-                title: "Nuxt.js",
-            },
-            {
-                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/250px-Git_icon.svg.png",
-                title: "Git",
-            },
-            {
-                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png",
-                title: "postGreSQL",
-            },
-            {
-                img: "https://kazupon.github.io/vue-i18n/vue-i18n-logo.png",
-                title: "Vue-i18n",
-            },
-        ])
-        return {
-            data,
-            width,
-        };
+const { width } = useWindowSize();
+const data = ref([
+    {
+        img: "https://cdn.iconscout.com/icon/free/png-256/free-django-11-1175036.png",
+        title: "Django",
     },
-});
+    {
+        img: "https://variwiki.com/images/a/a1/Docker.png",
+        title: "Docker",
+    },
+    {
+        img: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Nuxt-js.png",
+        title: "Nuxt.js",
+    },
+    {
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/250px-Git_icon.svg.png",
+        title: "Git",
+    },
+    {
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png",
+        title: "postGreSQL",
+    },
+    {
+        img: "https://kazupon.github.io/vue-i18n/vue-i18n-logo.png",
+        title: "Vue-i18n",
+    },
+]);
 </script>
 
 <style scoped>
 .box {
     display: flex;
-    flex-direction: row;
+    flex-direction: var(--dir);
     justify-content: space-around;
+    text-align: justify;
+    text-justify: inter-word;
 }
+
 
 .col-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: var(--size);
     gap: 12px;
 }
 
@@ -105,8 +100,6 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     gap: 12px;
-    height: 90vh;
-    overflow-y: scroll;
     font-size: 18px;
 }
 
