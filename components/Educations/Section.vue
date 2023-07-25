@@ -1,8 +1,5 @@
 <template>
     <div :style="{ 'font-size': (width > 1400) ? '18px' : '16px'  }">
-        <div style="margin-bottom: 12px;">
-            <span style="font-weight: bold; font-size: 18px; color: #0f6a08; font-size: 24px;"> {{ $t('educations.title') }} </span>
-        </div>
         <div v-for="el, i in data" :key="i">
             <EducationsItem :img="el" :index="i"/>
             <a-divider v-if="i < data.length - 1"/>

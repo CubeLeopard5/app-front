@@ -23,11 +23,31 @@
 					</div>
 				</div>
 				<div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; padding-bottom: 24px; gap: 24px;" class="list-cards">
-					<AboutMe id="about" class="card"/>
-					<SkillsSection id="skills" class="card"/>
-					<ProjectsSection id="projects" class="card"/>
-					<ExperiencesSection id="experiences"  class="card"/>
-					<EducationsSection id="educations" class="card"/>
+					<LibCard id="about" :title="$t('about.title')" titlePlace="start">
+						<template #content>
+							<AboutMe/>
+						</template>
+					</LibCard>
+					<LibCard id="skills" :title="$t('skills.title')" titlePlace="start">
+						<template #content>
+							<SkillsSection/>
+						</template>
+					</LibCard>
+					<LibCard id="projects" :title="$t('projects.title')" titlePlace="start">
+						<template #content>
+							<ProjectsSection/>
+						</template>
+					</LibCard>
+					<LibCard id="experiences" :title="$t('experiences.title')" titlePlace="start">
+						<template #content>
+							<ExperiencesSection/>
+						</template>
+					</LibCard>
+					<LibCard id="educations" :title="$t('educations.title')" titlePlace="start">
+						<template #content>
+							<EducationsSection/>
+						</template>
+					</LibCard>
 				</div>
 			</a-col>
 		</a-row>
@@ -42,38 +62,6 @@ const { width } = useWindowSize();
 </script>
 
 <style>
-.image {
-	background-image: url("../assets/Logo_MIDI.png");
-	background-size: contain;
-}
-.card {
-	width: 75%;
-    padding: 16px 16px 16px 16px;
-    border-radius: 12px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border: solid 1px #0f6a08;
-    animation-name: article-card-unselected;
-  	animation-duration: 0.5s;
-    transform: scale(1);
-	background: var(--bg);
-}
-
-@keyframes article-card-selected {
-  0%   {transform: scale(1);}
-  100% {transform: scale(1.05);}
-}
-
-@keyframes article-card-unselected {
-  0%   {transform: scale(1.05);}
-  100% {transform: scale(1);}
-}
-
-.card:hover {
-    animation-name: article-card-selected;
-  	animation-duration: 0.5s;
-    transform: scale(1.05);
-}
-
 .list-cards {
 	background: var(--bg-secondary);
 }
