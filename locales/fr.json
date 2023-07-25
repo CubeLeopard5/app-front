@@ -10,7 +10,8 @@
         "skills": "Compétences",
         "projects": "Projets",
         "experiences": "Expériences",
-        "educations": "Formations"
+        "educations": "Formations",
+        "phone": "Téléphone"
     },
     "about": {
         "title": "À propos",
@@ -74,7 +75,7 @@
                 "time": "Juillet 2020 - Décembre 2020",
                 "description": [
                     "Stage de 5 mois chez Axxone System.",
-                    "Création d'éléments en Vue.js, avec également la mise en place de système de recherche et d'indexation full-text."
+                    "Création d'éléments en Vue.js, avec également la mise en place de système de recherche et d'indexation full-text avec Elasticsearch."
                 ]
             }
         ]
@@ -119,9 +120,9 @@
     "teams": {
         "description": {
             "title": "Description",
-            "first": "Ce projet consiste à créer un serveur en C fonctionnant sur votre machine locale et un client qui peut se connecter à ce serveur. Le client peut alors se connecter et envoyer des messages à d'autres clients. Il démontre l'utilisation de",
+            "first": "Ce projet consiste à réaliser un serveur en C tournant sur votre machine locale et un client qui peut s'y connecter. Le client peut alors récupérer un identifiant et envoyer des messages à d'autres clients. Il démontre l'utilisation des fonctions",
             "and": "et",
-            "functions": "fonctions."
+            "functions": "."
         },
         "requirements": {
             "title": "Prérequis",
@@ -140,8 +141,8 @@
         "usage": {
             "title": "Usage",
             "first": "Pour executer le serveur:",
-            "second": "Le serveur fonctionnera alors sur 127.0.0.1 et utilisera le port par défaut 4000. Vous pouvez ajouter l'option -p ou --port pour modifier le numéro de port.",
-            "three": "pour executer le client:",
+            "second": "Le serveur tournera alors sur 127.0.0.1 et utilisera le port par défaut 4000. Vous pouvez ajouter l'option -p ou --port pour modifier le numéro de port.",
+            "three": "Pour executer le client:",
             "fourth": "Choisissez l'hôte et le numéro de port d'une instance existante de myteams_server.",
             "fifth": "Pour executer les tests:"
         },
@@ -149,10 +150,10 @@
             "title": "Commandes du programme",
             "first": "Afficher l'aide:",
             "second": "Se connecter avec un username:",
-            "fourth": "#Cela va vous retourner un uuid",
+            "fourth": "#Cela vous retournera un uuid",
             "fifth": "Envoyer un message à quelqu'un:",
             "sixth": "Voir les informations de tous les utilisateurs:",
-            "seven": "Voir les information d'un utilisateur:",
+            "seven": "Voir les informations d'un utilisateur:",
             "eight": "Voir la conversation avec un utilisateur:",
             "nine": "Déconnexion:",
             "ten": "Quitter le programme:"

@@ -10,7 +10,8 @@
         "skills": "Skills",
         "projects": "Projects",
         "experiences": "Experiences",
-        "educations": "Educations"
+        "educations": "Educations",
+        "phone": "Phone"
     },
     "about": {
         "title": "About me",
@@ -74,7 +75,7 @@
                 "time": "July 2020 - December 2020",
                 "description": [
                     "5-month internship at Axxone System.",
-                    "Creation of elements in Vue.js with full-text search and indexing."
+                    "Creation of elements in Vue.js and making an full-text search and indexing system with Elasticsearch."
                 ]
             }
         ]

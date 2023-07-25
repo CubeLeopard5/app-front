@@ -7,7 +7,7 @@
             <span> michaudadrien78@gmail.com </span>
         </div>
         <div>
-            <span> Téléphone: </span>
+            <span> {{ $t('summary.phone') }}: </span>
             <span> 06 07 91 04 31 </span>
         </div>
         <div class="malt-linked">
