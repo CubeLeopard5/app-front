@@ -64,6 +64,14 @@
 import { useWindowSize } from '@vueuse/core';
 
 const { width } = useWindowSize();
+
+useSeoMeta({
+	title: 'Michaud Developpement Informatique',
+	ogTitle: 'Michaud Developpement Informatique',
+	description: "Ayant suivi la formation de l'école Epitech (actuellement en 5ième année), je suis animé des technologies web et possède de larges compétences en C, CPP, Javascript et VueJS.",
+	ogDescription: "Ayant suivi la formation de l'école Epitech (actuellement en 5ième année), je suis animé des technologies web et possède de larges compétences en C, CPP, Javascript et VueJS.",
+	ogImage: '@/assets/Logo_MIDI.png',
+})
 </script>
 
 <style>
