@@ -31,7 +31,7 @@ export default defineComponent({
         cardColor: {
             type: String,
             required: false,
-            default: "#0f6a08",
+            default: "#13850a",
         }
     },
     setup() {

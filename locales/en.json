@@ -53,6 +53,7 @@
                 "compagny": "ESPRI Digital",
                 "place": "Argentan, Normandie, France",
                 "time": "April 2022 - July 2022",
+                "time_abreged": "04/2022 - 07/2022",
                 "description": [
                     "4-month internship at ESPRI Digital.",
                     "Implementation of a database backup system with Kubernetes managed containers."
@@ -63,6 +64,7 @@
                 "compagny": "Axxone System",
                 "place": "Lyon, Auvergne-Rhône-Alpes, France",
                 "time": "September 2021 - March 2022",
+                "time_abreged": "09/2021 - 03/2022",
                 "description": [
                     "Part-time 2 days/week at Axxones System for 6 months.",
                     "Redesign of the Mutuelle Générale de Prévoyance website."
@@ -73,6 +75,7 @@
                 "compagny": "Axxone System",
                 "place": "Lyon, Auvergne-Rhône-Alpes, France",
                 "time": "July 2020 - December 2020",
+                "time_abreged": "07/2020 - 12/2020",
                 "description": [
                     "5-month internship at Axxone System.",
                     "Creation of elements in Vue.js and making an full-text search and indexing system with Elasticsearch."
@@ -88,6 +91,7 @@
                 "compagny": "EPITECH",
                 "place": "Paris, Ile-de-France, France",
                 "time": "September 2019 - August 2024",
+                "time_abreged": "09/2019 - 08/2024",
                 "description": "The Grande Ecole Program is Epitech Technology's historic curriculum. It takes place over 5 years and is designed to train IT experts. It offers a dense and evolving technical content, including a diversity of programming projects and covering numerous languages that will enable students to tackle all new technologies."
             },
             {
@@ -95,6 +99,7 @@
                 "compagny": "Dublin City University",
                 "place": "Dublin, Irlande",
                 "time": "September 2022 - May 2023",
+                "time_abreged": "09/2022 - 05/2023",
                 "description": "I spent my fourth year studying at Dublin City University in Ireland. This enabled me to expand my skills in web design, project management and learn new technologies."
             },
             {
@@ -102,6 +107,7 @@
                 "compagny": "Lycée Albert Camus",
                 "place": "Lyon, Auvergne-Rhône-Alpes, France",
                 "time": "2019",
+                "time_abreged": "2019",
                 "description": "I obtained my baccalaureate in Engineering Sciences with a major in Computer and Digital Sciences (ISN)."
             }
         ]
@@ -159,5 +165,10 @@
             "ten": "Quit the program:"
         }
     },
-    "language": "Language"
+    "language": "Language",
+    "color": {
+        "title": "Theme",
+        "dark": "Dark",
+        "light": "Light"
+    }
  }

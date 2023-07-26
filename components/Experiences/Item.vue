@@ -7,9 +7,10 @@
             </div>
         </a-col>
         <a-col :span="(width > 1400) ? 18 : 24">
-            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 24px;">
                 <span style="font-weight: bold; font-size: 20px;"> {{ $t(`experiences.items.${index}.title`) }} </span>
-                <span> {{ $t(`experiences.items.${index}.time`) }} </span>
+                <span v-if="(width > 1400)"> {{ $t(`experiences.items.${index}.time`) }} </span>
+                <span v-else> {{ $t(`experiences.items.${index}.time_abreged`) }} </span>
             </div>
             <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
                 <span style="font-size: 16px; color: grey;"> {{ $t(`experiences.items.${index}.place`) }} </span>

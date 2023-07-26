@@ -1,10 +1,10 @@
 <template>
     <div class="contact">
-        <span style="font-weight: bold; font-size: 20px;"> Contact </span>
-        <a-divider style="margin: 0px;"/>
         <div>
             <span> Mail: </span>
-            <span> michaudadrien78@gmail.com </span>
+            <a href="mailto:michaudadrien78@gmail.com">
+                <span> michaudadrien78@gmail.com </span>
+            </a>
         </div>
         <div>
             <span> {{ $t('summary.phone') }}: </span>
@@ -30,8 +30,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 16px;
-    margin-top: 12px;
     font-size: 18px;
 }
 </style>

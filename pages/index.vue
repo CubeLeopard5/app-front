@@ -2,7 +2,7 @@
 	<div>
 		<client-only>
 		<a-row>
-			<a-col :span="4" v-if="width > 1400" style="display: flex; flex-direction: column; align-items: center;">
+			<a-col :span="4" v-if="width > 1400">
 				<Sider/>
 			</a-col>
 			<a-col :span="(width > 1400) ? 20: 24">
@@ -15,39 +15,44 @@
 						</select>
 					</form>
 					<div style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
-						<span>Color mode:</span>
+						<span> {{ $t('color.title') }} </span>
 						<select v-model="$colorMode.preference" style="border: solid 2px #0f6a08; color: black;">
-							<option value="light">Light</option>
-							<option value="dark">Dark</option>
+							<option value="light">{{ $t('color.light') }}</option>
+							<option value="dark">{{ $t('color.dark') }}</option>
 						</select>
 					</div>
 				</div>
 				<div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; padding-bottom: 24px; gap: 24px;" class="list-cards">
-					<LibCard id="about" :title="$t('about.title')" titlePlace="start">
+					<Card id="about" :title="$t('about.title')" titlePlace="start">
 						<template #content>
-							<AboutMe/>
+							<AboutSection/>
 						</template>
-					</LibCard>
-					<LibCard id="skills" :title="$t('skills.title')" titlePlace="start">
+					</Card>
+					<Card id="skills" :title="$t('skills.title')" titlePlace="start">
 						<template #content>
 							<SkillsSection/>
 						</template>
-					</LibCard>
-					<LibCard id="projects" :title="$t('projects.title')" titlePlace="start">
+					</Card>
+					<Card id="projects" :title="$t('projects.title')" titlePlace="start">
 						<template #content>
 							<ProjectsSection/>
 						</template>
-					</LibCard>
-					<LibCard id="experiences" :title="$t('experiences.title')" titlePlace="start">
+					</Card>
+					<Card id="experiences" :title="$t('experiences.title')" titlePlace="start">
 						<template #content>
 							<ExperiencesSection/>
 						</template>
-					</LibCard>
-					<LibCard id="educations" :title="$t('educations.title')" titlePlace="start">
+					</Card>
+					<Card id="educations" :title="$t('educations.title')" titlePlace="start">
 						<template #content>
 							<EducationsSection/>
 						</template>
-					</LibCard>
+					</Card>
+					<Card id="contacts" title="Contacts" titlePlace="start">
+						<template #content>
+							<ContactsSection/>
+						</template>
+					</Card>
 				</div>
 			</a-col>
 		</a-row>
