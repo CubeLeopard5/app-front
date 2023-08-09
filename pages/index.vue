@@ -1,69 +1,71 @@
 <template>
-	<div>
-		<client-only>
-		<a-row>
-			<a-col :span="4" v-if="width > 1400">
-				<Sider/>
-			</a-col>
-			<a-col :span="(width > 1400) ? 20: 24">
-				<div style="display: flex; flex-direction: row; justify-content: space-around; font-size: 16px; margin: 12px;" v-if="width < 1400">
-					<form style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
-						<label> {{ $t('language') }} </label>
-						<select v-model="$i18n.locale" style="border: solid 2px #0f6a08; color: black;">
-							<option value="en">en</option>
-							<option value="fr">fr</option>
-						</select>
-					</form>
-					<div style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
-						<span> {{ $t('color.title') }} </span>
-						<select v-model="$colorMode.preference" style="border: solid 2px #0f6a08; color: black;">
-							<option value="light">{{ $t('color.light') }}</option>
-							<option value="dark">{{ $t('color.dark') }}</option>
-						</select>
-					</div>
-				</div>
-				<div style="display: flex; flex-direction: column; align-items: center; padding-top: 24px; padding-bottom: 24px; gap: 24px;" class="list-cards">
-					<Card id="about" :title="$t('about.title')" titlePlace="start">
-						<template #content>
-							<AboutSection/>
-						</template>
-					</Card>
-					<Card id="skills" :title="$t('skills.title')" titlePlace="start">
-						<template #content>
-							<SkillsSection/>
-						</template>
-					</Card>
-					<Card id="projects" :title="$t('projects.title')" titlePlace="start">
-						<template #content>
-							<ProjectsSection/>
-						</template>
-					</Card>
-					<Card id="experiences" :title="$t('experiences.title')" titlePlace="start">
-						<template #content>
-							<ExperiencesSection/>
-						</template>
-					</Card>
-					<Card id="educations" :title="$t('educations.title')" titlePlace="start">
-						<template #content>
-							<EducationsSection/>
-						</template>
-					</Card>
-					<Card id="contacts" title="Contacts" titlePlace="start">
-						<template #content>
-							<ContactsSection/>
-						</template>
-					</Card>
-				</div>
-			</a-col>
-		</a-row>
-		</client-only>
+	<div style="display: flex; flex-direction: row;">
+		<div style="display: flex; flex-direction: column; align-items: center; min-width: 13%;">
+			<Sider/>
+		</div>
+		<div class="list-cards">
+			<client-only>
+			<Card id="about" :title="$t('about.title')" titlePlace="start" class="card">
+				<template #content>
+					<AboutSection/>
+				</template>
+			</Card>
+			<Card id="skills" :title="$t('skills.title')" titlePlace="start" class="card">
+				<template #content>
+					<SkillsSection/>
+				</template>
+			</Card>
+			<Card id="projects" :title="$t('projects.title')" titlePlace="start" class="card">
+				<template #content>
+					<ProjectsSection/>
+				</template>
+			</Card>
+			<Card id="experiences" :title="$t('experiences.title')" titlePlace="start" class="card">
+				<template #content>
+					<ExperiencesSection/>
+				</template>
+			</Card>
+			<Card id="educations" :title="$t('educations.title')" titlePlace="start" class="card">
+				<template #content>
+					<EducationsSection/>
+				</template>
+			</Card>
+			<Card id="contacts" title="Contacts" titlePlace="start" class="card">
+				<template #content>
+					<ContactsSection/>
+				</template>
+			</Card>
+			</client-only>
+		</div>
 	</div>
 </template>
 
 <script setup>
-import { useWindowSize } from '@vueuse/core';
+import { onMounted, onUnmounted } from 'vue';
 
-const { width } = useWindowSize();
+onMounted(async() => {
+  	window.addEventListener('scroll', handleScroll);
+	await nextTick();
+	const cards = document.querySelectorAll('.card');
+
+	cards.forEach((card) => {
+		const cardRect = card.getBoundingClientRect();
+		if (cardRect.top < (window.innerHeight - 200)) {
+			card.classList.add('slide-left');
+		}
+	});
+});
+
+const handleScroll = () => {
+	const cards = document.querySelectorAll('.card');
+
+	cards.forEach((card) => {
+		const cardRect = card.getBoundingClientRect();
+		if (cardRect.top < (window.innerHeight - 200)) {
+			card.classList.add('slide-left');
+		}
+	});
+};
 
 useSeoMeta({
 	title: 'Michaud Developpement Informatique',
@@ -76,7 +78,32 @@ useSeoMeta({
 
 <style>
 .list-cards {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	gap: 24px;
 	background: var(--bg-secondary);
+}
+
+.card {
+	opacity: 0;
+}
+
+@keyframes slide-left {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.slide-left {
+	animation-name: slide-left;
+  	animation-duration: 1.0s;
+	opacity: 1;
 }
 
 body::-webkit-scrollbar {

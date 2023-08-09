@@ -25,6 +25,7 @@ body {
 	background-color: var(--bg);
 	color: var(--color);
 	transition: background-color .3s;
+	font-family: 'Ruwudu', serif;
 }
 
 a {

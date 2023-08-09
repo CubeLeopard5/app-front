@@ -77,14 +77,9 @@ export default defineComponent({
     font-weight: bold;
     font-size: 20px;
     border-radius: 6px;
-
-    background: linear-gradient(to left, var(--bg) 50%, var(--border-color) 50%) right;
-    background-size: 200% 100%;
-    transition: .2s ease-out;
 }
 
 .menu-item:hover {
-    border-radius: 6px;
-    background-position: left;
+    color: var(--color-primary);
 }
 </style>

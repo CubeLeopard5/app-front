@@ -1,5 +1,5 @@
 <template>
-    <div class="card" :style="{ '--border': `solid 1px ${cardColor}` }">
+    <div class="card" :style="{ '--border': `solid 2px ${cardColor}` }">
         <slot name="header">
             <div class="card-title" :style="{ '--title-place': titlePlace, '--color': cardColor }">
                 <span> {{ title }} </span>
@@ -66,25 +66,6 @@ export default defineComponent({
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border: var(--border);
-    animation-name: article-card-unselected;
-  	animation-duration: 0.5s;
-    transform: scale(1);
 	background: var(--bg);
-}
-
-.card:hover {
-    animation-name: article-card-selected;
-  	animation-duration: 0.5s;
-    transform: scale(1.05);
-}
-
-@keyframes article-card-selected {
-  0%   {transform: scale(1);}
-  100% {transform: scale(1.05);}
-}
-
-@keyframes article-card-unselected {
-  0%   {transform: scale(1.05);}
-  100% {transform: scale(1);}
 }
 </style>
