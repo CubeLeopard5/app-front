@@ -117,6 +117,7 @@ export default defineComponent({
 .input-text {
     border: 1px solid var(--color-primary);
     width: 88%;
+    color: black;
 }
 
 .input-text:focus {
@@ -128,6 +129,7 @@ export default defineComponent({
     border: 1px solid var(--color-primary);
     width: 88%;
     height: 150px;
+    color: black;
 }
 
 .textarea:focus {
