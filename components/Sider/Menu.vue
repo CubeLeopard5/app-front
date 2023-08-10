@@ -62,7 +62,6 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 16px;
 }
 
 .menu-item {
@@ -71,12 +70,8 @@ export default defineComponent({
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-left: 6px;
-    padding-right: 6px;
-    gap: 5px;
     font-weight: bold;
     font-size: 20px;
-    border-radius: 6px;
 }
 
 .menu-item:hover {

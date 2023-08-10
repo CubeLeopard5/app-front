@@ -12,10 +12,10 @@
             </a-switch>
             <a-switch class="switch-theme" v-model:checked="state.checkedT" @change="(e) => { (e == true) ? $colorMode.preference = 'light' : $colorMode.preference = 'dark'; }">
                 <template #checkedChildren>
-                    <img src="@/assets/sun-svgrepo-com.svg" alt="">
+                    <img style="display: flex;" src="@/assets/sun-svgrepo-com.svg" alt="">
                 </template>
                 <template #unCheckedChildren>
-                    <img src="@/assets/moon-svgrepo-com.svg" alt="">
+                    <img style="display: flex;" src="@/assets/moon-svgrepo-com.svg" alt="">
                 </template>
             </a-switch>
         </div>

@@ -4,39 +4,41 @@
             <img src="@/assets/Logo_MIDI.png" style="height: 200px; width: 200px;"/>
             <span> Adrien Michaud </span>
         </div>
-        <div class="head-configs">
-            <div class="head-configs-box">
-                <span> {{ $t('language') }} </span>
-                <select v-model="$i18n.locale" class="head-configs-box-select">
-                    <option value="en">en</option>
-                    <option value="fr">fr</option>
-                </select>
-            </div>
-            <div class="head-configs-box">
-                <span> {{ $t('color.title') }} </span>
-                <select v-model="$colorMode.preference" class="head-configs-box-select">
-                    <option value="light">{{ $t('color.light') }}</option>
-                    <option value="dark">{{ $t('color.dark') }}</option>
-                </select>
-            </div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <a-switch class="switch-theme" v-model:checked="state.checkedL" @change="(e) => { (e == true) ? $i18n.locale = 'fr' : $i18n.locale = 'en'; }">
+                <template #checkedChildren>
+                    <span> FR </span>
+                </template>
+                <template #unCheckedChildren>
+                    <span> EN </span>
+                </template>
+            </a-switch>
+            <a-switch class="switch-theme" v-model:checked="state.checkedT" @change="(e) => { (e == true) ? $colorMode.preference = 'light' : $colorMode.preference = 'dark'; }">
+                <template #checkedChildren>
+                    <img style="display: flex;" src="@/assets/sun-svgrepo-com.svg" alt="">
+                </template>
+                <template #unCheckedChildren>
+                    <img style="display: flex;" src="@/assets/moon-svgrepo-com.svg" alt="">
+                </template>
+            </a-switch>
         </div>
     </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
+import { reactive } from 'vue';
 
-export default defineComponent({
-    setup() {
-        const colorMode = useColorMode();
-        return {
-            colorMode,
-        }
-    },
+const state = reactive({
+    checkedT: true,
+    checkedL: true,
 });
 </script>
 
 <style scoped>
+.switch-theme {
+    background: var(--color-primary);
+}
+
 .head {
     display: flex;
     flex-direction: column;
@@ -49,33 +51,5 @@ export default defineComponent({
     flex-direction: column;
     align-items: center;
     gap: 12px;
-}
-
-.head-configs {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 16px;
-}
-
-.head-configs-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-}
-
-.head-configs-box-select {
-    border: solid 2px var(--border-color);
-    color: black;
-}
-
-.ant-switch-checked {
-    background: var(--border-color);
-}
-
-.ant-switch-checked:focus {
-    background: var(--border-color);;
-    box-shadow: 0 0 0 2px var(--border-color);;
 }
 </style>
