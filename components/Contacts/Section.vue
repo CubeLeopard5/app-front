@@ -19,7 +19,7 @@
             </div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 16px;">
-            <span style="font-weight: bold; font-size: 21px;"> Envoyer moi un mail: </span>
+            <span style="font-weight: bold; font-size: 21px;"> Envoyez moi un mail: </span>
             <form ref="form" @submit.prevent="sendEmail" class="form-container">
                 <div class="name-input">
                     <span> Name: </span>
