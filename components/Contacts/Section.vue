@@ -27,7 +27,7 @@
                 </div>
                 <div class="name-input">
                     <span> Email: </span>
-                    <input placeholder="Enter your email" type="email" pattern=".+@globex\.com" required class="input-text" v-model="formState.mail" name="user_email" />
+                    <input placeholder="Enter your email" type="text" required class="input-text" v-model="formState.mail" name="user_email" />
                 </div>
                 <div class="name-input">
                     <span> Message: </span>
@@ -40,7 +40,7 @@
                         </a-button>
                     </a-form-item>
                     <a-form-item :wrapper-col="{ offset: 8, span: 16 }">
-                        <a-button type="primary" html-type="submit" :disabled="checkInputs()"> Envoyer </a-button>
+                        <a-button style="background: #13850a; border: solid 1px #13850a;" type="primary" html-type="submit" :disabled="checkInputs()"> Envoyer </a-button>
                     </a-form-item>
                 </div>
             </form>
