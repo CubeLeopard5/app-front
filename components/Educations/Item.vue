@@ -1,4 +1,5 @@
 <template>
+<client-only>
     <a-row style="font-size: 18px; text-align: justify; text-justify: inter-word;">
         <a-col :span="6" v-if="width > 1400">
             <div style="display: flex; flex-direction: column; align-items: center; padding: 0px 24px 0px 0px; gap: 6px;">
@@ -18,6 +19,7 @@
             </div>
         </a-col>
     </a-row>
+    </client-only>
 </template>
 
 <script>
