@@ -1,7 +1,7 @@
 <template>
     <div class="head">
         <div class="head-logo-name">
-            <img src="@/assets/Logo_MIDI.png" style="height: 200px; width: 200px;"/>
+            <img src="@/assets/Logo_MIDI.png" class="logo-etp"/>
             <span> Adrien Michaud </span>
         </div>
         <div style="display: flex; flex-direction: row; justify-content: space-between;">
@@ -35,6 +35,22 @@ const state = reactive({
 </script>
 
 <style scoped>
+.logo-etp {
+    height: 200px;
+    width: 200px;
+    animation-name: scale-in-center;
+  	animation-duration: 1.0s;
+}
+
+@keyframes scale-in-center {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .switch-theme {
     background: var(--color-primary);
 }

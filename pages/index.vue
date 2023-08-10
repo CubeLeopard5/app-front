@@ -58,7 +58,7 @@ onMounted(async() => {
 		const cardRect = cards[i].getBoundingClientRect();
 		if (cardRect.top < (window.innerHeight - 200)) {
 			cards[i].classList.add('slide-left');
-			await new Promise(r => setTimeout(r, 200));
+			await new Promise(r => setTimeout(r, 300));
 		}
 	}
 });
