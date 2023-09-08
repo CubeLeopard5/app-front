@@ -160,7 +160,7 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     gap: 16px;
-    align-items: end;
+    align-items: flex-end;
 }
 
 @media screen and (max-width: 850px) {

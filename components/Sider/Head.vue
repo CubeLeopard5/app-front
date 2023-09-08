@@ -1,11 +1,11 @@
 <template>
     <div class="head">
         <div class="head-logo-name">
-            <img src="@/assets/Logo_MIDI.png" class="logo-etp"/>
+            <img src="@/assets/Logo_MIDI.png" class="logo-etp" alt="company logo"/>
             <span> Adrien Michaud </span>
         </div>
         <div style="display: flex; flex-direction: row; justify-content: space-between;">
-            <a-switch class="switch-theme" v-model:checked="state.checkedL" @change="(e) => { (e == true) ? $i18n.locale = 'fr' : $i18n.locale = 'en'; }">
+            <a-switch aria-label="Switch language" class="switch-theme" v-model:checked="state.checkedL" @change="(e) => { (e == true) ? $i18n.locale = 'fr' : $i18n.locale = 'en'; }">
                 <template #checkedChildren>
                     <span> FR </span>
                 </template>
@@ -13,7 +13,7 @@
                     <span> EN </span>
                 </template>
             </a-switch>
-            <a-switch class="switch-theme" v-model:checked="state.checkedT" @change="(e) => { (e == true) ? $colorMode.preference = 'light' : $colorMode.preference = 'dark'; }">
+            <a-switch aria-label="Switch color theme" class="switch-theme" v-model:checked="state.checkedT" @change="(e) => { (e == true) ? $colorMode.preference = 'light' : $colorMode.preference = 'dark'; }">
                 <template #checkedChildren>
                     <img style="display: flex;" src="@/assets/sun-svgrepo-com.svg" alt="">
                 </template>
@@ -38,17 +38,6 @@ const state = reactive({
 .logo-etp {
     height: 200px;
     width: 200px;
-    animation-name: scale-in-center;
-  	animation-duration: 1.0s;
-}
-
-@keyframes scale-in-center {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 .switch-theme {

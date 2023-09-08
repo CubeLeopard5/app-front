@@ -67,5 +67,6 @@ export default defineComponent({
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border: var(--border);
 	background: var(--bg);
+    box-shadow: 0px 0px 6px 1px var(--color-primary);
 }
 </style>

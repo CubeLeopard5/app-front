@@ -44,12 +44,15 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, onBeforeUnmount } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 
 const { width } = useWindowSize();
 
 onMounted(async() => {
+	let timer = 0;
+    let reject = null;
+
   	window.addEventListener('scroll', handleScroll);
 	await nextTick();
 	const cards = document.querySelectorAll('.card');
@@ -58,9 +61,22 @@ onMounted(async() => {
 		const cardRect = cards[i].getBoundingClientRect();
 		if (cardRect.top < (window.innerHeight - 200)) {
 			cards[i].classList.add('slide-left');
-			await new Promise(r => setTimeout(r, 300));
+			await new Promise((resolve, _reject) => {
+				reject = _reject;
+				timer = setTimeout(resolve, 300);
+			});
+			if (timer) {
+                clearTimeout(timer);
+                timer = 0;
+                reject();
+                reject = null;
+            }
 		}
 	}
+});
+
+onBeforeUnmount(() => {
+
 });
 
 const handleScroll = () => {
